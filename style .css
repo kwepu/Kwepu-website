@@ -1,0 +1,22 @@
+Perfect. 👍 You are in the right place.
+For this step, paste the CSS below into the empty Edit file box.
+Writing
+{ box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f7faf7; color: #18351f; line-height: 1.6; }
+header { background: #1f6b3a; color: white; padding: 18px 6%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+header h1 { margin: 0; font-size: 24px; }
+nav a { color: white; text-decoration: none; margin: 0 8px; font-weight: bold; }
+.hero { padding: 80px 8%; text-align: center; background: #dfeee2; }
+.hero h2 { font-size: 40px; margin: 0 0 15px; color: #175c31; }
+.hero p { max-width: 750px; margin: auto; font-size: 18px; }
+.button { display: inline-block; margin-top: 25px; padding: 13px 24px; background: #1f6b3a; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+section { padding: 55px 8%; max-width: 1100px; margin: auto; }
+section h2 { text-align: center; color: #1f6b3a; margin-bottom: 25px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.card h3 { color: #1f6b3a; }
+.impact { background: #edf6ee; }
+footer { background: #163c25; color: white; text-align: center; padding: 30px 8%; }
+After pasting:
+Scroll down → tap Commit changes → wait for it to finish.
+Then tell me “committed”.
