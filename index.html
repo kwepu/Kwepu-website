@@ -1,256 +1,567 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KWEPU | Kenya Women Environmental Protection Unit</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #18351f;
-      line-height: 1.6;
-      background: #f7faf7;}
-    header {
-      background: #1f6b3a;
-      color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;}
-    header h1 { margin: 0; font-size: 24px; }
-    nav a {
-      .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.logo {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-}
+    <title>KWEPU | Kenya Women Environmental Protection Unit</title>
 
-.brand h1 {
-    margin: 0;
-    font-size: 24px;
-}
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: bold;}
-    .hero {
-      padding: 80px 8%;
-      text-align: center;
-      background: #dfeee2;}
-    .hero h2 {
-      font-size: 40px;
-      margin: 0 0 15px;
-      color: #175c31;}
-    .hero p {
-      max-width: 750px;
-      margin: auto;
-      font-size: 18px;}
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 24px;
-      background: #1f6b3a;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;}
-    section {
-      padding: 55px 8%;
-      max-width: 1100px;
-      margin: auto;}
-    section h2 {
-      text-align: center;
-      color: #1f6b3a;
-      margin-bottom: 25px; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px; }
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.08);}
-    .card h3 { color: #1f6b3a; }
-    .impact {
-      background: #edf6ee;}.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    margin-top: 30px;
-}
+    <style>
 
-.gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-    footer {
-      background: #163c25;
-      color: white;
-      text-align: center;
-      padding: 30px 8%;}
-  </style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #18351f;
+            line-height: 1.6;
+            background: #f7faf7;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background: #1f6b3a;
+            color: white;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+            padding: 8px 4px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            padding: 80px 8%;
+            text-align: center;
+            background: #dfeee2;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin: 0 0 15px;
+            color: #175c31;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 24px;
+            background: #1f6b3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #175c31;
+        }
+
+
+        /* SECTIONS */
+
+        section {
+            padding: 55px 8%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #1f6b3a;
+            margin-bottom: 25px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+        }
+
+        .card h3 {
+            color: #1f6b3a;
+        }
+
+
+        /* IMPACT */
+
+        .impact {
+            background: #edf6ee;
+            max-width: none;
+        }
+
+        .impact .cards {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* LEADERSHIP */
+
+        #leadership {
+            text-align: center;
+        }
+
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+
+        /* DONATE */
+
+        #donate {
+            background: #edf6ee;
+            text-align: center;
+        }
+
+
+        /* CONTACT */
+
+        #contact {
+            text-align: center;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #163c25;
+            color: white;
+            text-align: center;
+            padding: 30px 8%;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .brand {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 3px 6px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .logo {
+                width: 65px;
+                height: 65px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
 <body>
 
-<header>
-    <div class="brand">
-        <img src="Kwepulogo.jpeg" alt="KWEPU Logo" class="logo">
-        <h1>KWEPU</h1>
-    </div>
-
-   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#impact">Impact</a>
-    <a href="#leadership">Leadership</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#donate">Donate</a>
-    <a href="#contact">Contact</a>
-</nav>
-</header>
-<div class="hero">
-  <h2>Kenya Women Environmental Protection Unit</h2>
-  <p>
-   <body>
 
 <header>
+
     <div class="brand">
-        <img src="kwepulogo.jpeg" alt="KWEPU Logo" class="logo">
+
+        <img src="Kwepulogo.jpeg"
+             alt="KWEPU Logo"
+             class="logo">
+
         <h1>KWEPU</h1>
+
     </div>
+
 
     <nav>
+
         <a href="#about">About</a>
+
         <a href="#projects">Projects</a>
+
         <a href="#impact">Impact</a>
+
+        <a href="#leadership">Leadership</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#donate">Donate</a>
+
         <a href="#contact">Contact</a>
+
     </nav>
+
 </header>
-    restore landscapes and promote sustainable livelihoods.
-  </p>
-</section>
-<section id="projects">
-  <h2>Our Projects</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Tree Planting</h3>
-      <p>Restoring schools and community landscapes through tree planting and environmental education.</p>
-    </div>
-    <div class="card">
-      <h3>Tree Nursery</h3>
-      <p>Supporting local tree production and increasing access to suitable indigenous and fruit trees.</p>
-    </div>
-    <div class="card">
-      <h3>Agroforestry</h3>
-      <p>Promoting gardens and farming systems that combine food production with environmental restoration.</p>
-    </div>
-    <div class="card">
-      <h3>Schools & Communities</h3>
-      <p>Working with schools and communities to create long-term environmental stewardship.</p>
-    </div>
-  </div>
-</section>
-<section id="impact" class="impact">
-  <h2>Our Impact</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>5,000+</h3>
-      <p>Trees planted at Eddy Memorial School.</p>
-    </div>
-    <div class="card">
-      <h3>4,000+</h3>
-      <p>Trees planted at Kamasengre School.</p>
-    </div>
-    <div class="card">
-      <h3>Since 2019</h3>
-      <p>Community-led environmental action in Rusinga.</p>
-    </div>
-  </div>
-</section><section id="leadership">
-    <h2>Leadership</h2>
-    <p style="text-align:center;">
-        Meet the dedicated team leading KWEPU and advancing environmental protection,
-        community empowerment and sustainable development.
+
+
+
+<div class="hero">
+
+    <h2>Kenya Women Environmental Protection Unit</h2>
+
+    <p>
+        Building healthier communities and a greener future through
+        environmental protection, tree planting, agroforestry and
+        community-led action.
     </p>
+
+    <a class="button" href="#projects">Our Projects</a>
+
+</div>
+
+
+
+<section id="about">
+
+    <h2>About KWEPU</h2>
+
+    <p class="section-intro">
+        KWEPU was established in 2019 in Rusinga, Homa Bay County, Kenya.
+        We work with communities and schools to protect the environment,
+        restore landscapes and promote sustainable livelihoods.
+    </p>
+
+</section>
+
+
+
+<section id="projects">
+
+    <h2>Our Projects</h2>
 
     <div class="cards">
+
+
         <div class="card">
-            <h3>KWEPU Leadership</h3>
-            <p>Leadership profiles and photographs will be added here.</p>
+
+            <h3>Tree Planting</h3>
+
+            <p>
+                Restoring schools and community landscapes through tree
+                planting and environmental education.
+            </p>
+
         </div>
+
+
+        <div class="card">
+
+            <h3>Tree Nursery</h3>
+
+            <p>
+                Supporting local tree production and increasing access
+                to suitable indigenous and fruit trees.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Agroforestry</h3>
+
+            <p>
+                Promoting gardens and farming systems that combine food
+                production with environmental restoration.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Schools & Communities</h3>
+
+            <p>
+                Working with schools and communities to create long-term
+                environmental stewardship.
+            </p>
+
+        </div>
+
+
     </div>
+
 </section>
+
+
+
+<section id="impact" class="impact">
+
+    <h2>Our Impact</h2>
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>5,000+</h3>
+
+            <p>Trees planted at Eddy Memorial School.</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>4,000+</h3>
+
+            <p>Trees planted at Kamasengre School.</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Since 2019</h3>
+
+            <p>Community-led environmental action in Rusinga.</p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<section id="leadership">
+
+    <h2>Leadership</h2>
+
+    <p class="section-intro">
+
+        Meet the dedicated team leading KWEPU and advancing
+        environmental protection, community empowerment and
+        sustainable development.
+
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>KWEPU Leadership</h3>
+
+            <p>
+                Director, Assistant Director and leadership profiles
+                will be added here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
 <section id="gallery">
+
     <h2>Gallery</h2>
-    <p style="text-align:center;">
+
+    <p class="section-intro">
+
         Highlights from KWEPU tree planting, environmental education,
         school projects and community activities.
+
     </p>
+
 
     <div class="gallery">
-        <img src="175861096_270135771433194_7508932878777501049_n.jpg" alt="KWEPU environmental activity">
 
-<img src="176854879_271360624644042_4163683579716049580_n.jpg" alt="KWEPU community activity">
+        <img src="175861096_270135771433194_7508932878777501049_n.jpg"
+             alt="KWEPU environmental activity">
 
-<img src="178827824_274531260993645_5430504235100671051_n.jpg" alt="KWEPU environmental project">
+        <img src="176854879_271360624644042_4163683579716049580_n.jpg"
+             alt="KWEPU community activity">
 
-<img src="179034498_276222124157892_1402540310030450672_n.jpg" alt="KWEPU tree planting activity">
+        <img src="178827824_274531260993645_5430504235100671051_n.jpg"
+             alt="KWEPU environmental project">
 
-<img src="179195487_274533400993431_122569645581934698_n.jpg" alt="KWEPU community project">
+        <img src="179034498_276222124157892_1402540310030450672_n.jpg"
+             alt="KWEPU tree planting activity">
 
-<img src="179525517_276488717464566_9009304736463187484_n.jpg" alt="KWEPU environmental conservation activity">
+        <img src="179195487_274533400993431_122569645581934698_n.jpg"
+             alt="KWEPU community project">
 
-<img src="180550443_276917624088342_4309446399048397906_n.jpg" alt="KWEPU project activity">
+        <img src="179525517_276488717464566_9009304736463187484_n.jpg"
+             alt="KWEPU environmental conservation activity">
 
-<img src="309308576_176573121559866_5211815285159488892_n.jpg" alt="KWEPU community environmental activity">
+        <img src="180550443_276917624088342_4309446399048397906_n.jpg"
+             alt="KWEPU project activity">
 
-<img src="475412663_1137564321356997_8668955642966313222_n.jpg" alt="KWEPU environmental restoration">
+        <img src="309308576_176573121559866_5211815285159488892_n.jpg"
+             alt="KWEPU community environmental activity">
 
-<img src="476805312_1145972063849556_7739389218486389052_n.jpg" alt="KWEPU community engagement">
+        <img src="475412663_1137564321356997_8668955642966313222_n.jpg"
+             alt="KWEPU environmental restoration">
 
-<img src="476834305_1145971960516233_8932604420502651316_n.jpg" alt="KWEPU environmental programme">
+        <img src="476805312_1145972063849556_7739389218486389052_n.jpg"
+             alt="KWEPU community engagement">
 
-<img src="480208604_1149674776812618_6738704117484092477_n.jpg" alt="KWEPU environmental activity">
+        <img src="476834305_1145971960516233_8932604420502651316_n.jpg"
+             alt="KWEPU environmental programme">
 
-<img src="480957494_1159377989175630_3447797188469261156_n.jpg" alt="KWEPU community project">
+        <img src="480208604_1149674776812618_6738704117484092477_n.jpg"
+             alt="KWEPU environmental activity">
+
+        <img src="480957494_1159377989175630_3447797188469261156_n.jpg"
+             alt="KWEPU community project">
+
     </div>
+
 </section>
+
+
 
 <section id="donate">
+
     <h2>Support KWEPU</h2>
 
-    <p style="text-align:center; max-width:750px; margin:0 auto;">
-        Your support helps KWEPU expand tree planting, environmental education,
-        agroforestry and community restoration projects.
+    <p class="section-intro">
+
+        Your support helps KWEPU expand tree planting,
+        environmental education, agroforestry and
+        community restoration projects.
+
     </p>
 
-    <div style="text-align:center;">
-        <a class="button" href="#contact">Support Our Work</a>
-    </div>
+    <a class="button" href="#contact">
+        Support Our Work
+    </a>
+
 </section>
+
+
+
 <section id="contact">
-  <h2>Contact KWEPU</h2>
-  <p style="text-align:center;">
-    Rusinga, Homa Bay County, Kenya
-  </p>
-  <p style="text-align:center;">
-    We welcome partnerships, support and collaboration for environmental restoration.
-  </p>
+
+    <h2>Contact KWEPU</h2>
+
+    <p>
+        Rusinga, Homa Bay County, Kenya
+    </p>
+
+    <p>
+        We welcome partnerships, support and collaboration
+        for environmental restoration.
+    </p>
+
 </section>
+
+
+
 <footer>
-  <p>© 2026 KWEPU — Kenya Women Environmental Protection Unit</p>
-  <p>Building a greener and more resilient future.</p>
+
+    <p>
+        © 2026 KWEPU – Kenya Women Environmental Protection Unit
+    </p>
+
+    <p>
+        Building a greener and more resilient future.
+    </p>
+
 </footer>
+
+
 </body>
+
+</html>
