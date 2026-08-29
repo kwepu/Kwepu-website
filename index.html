@@ -190,12 +190,116 @@
         }
 
 
+        /* LEADERSHIP */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.leader-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    text-align: center;
+}
+
+.leader-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.leader-card h3 {
+    margin: 5px 0;
+    color: #1f6b3a;
+}
+
+.leader-card p {
+    margin: 0;
+    font-weight: bold;
+}
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.leader-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    text-align: center;
+}
+
+.leader-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.leader-card h3 {
+    margin: 5px 0;
+    color: #1f6b3a;
+}
+
+.leader-card p {
+    margin: 0;
+    font-weight: bold;
+}
+
+
         /* DONATE */
 
         #donate {
             background: #edf6ee;
             text-align: center;
-        }
+        }.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 750px;
+    margin: 35px auto;
+}
+
+.donation-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.donation-card h3 {
+    color: #1f6b3a;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.donation-card p {
+    margin-bottom: 12px;
+}
+
+.account-number {
+    font-size: 26px;
+    font-weight: bold;
+    color: #18351f;
+    letter-spacing: 1px;
+}
+
+.donation-message {
+    text-align: center;
+    max-width: 700px;
+    margin: 25px auto 0;
+}
 
 
         /* CONTACT */
@@ -242,9 +346,25 @@
             }
 
             .logo {
-                width: 65px;
-                height: 65px;
-            }
+    width: 65px;
+    height: 65px;
+}
+
+.leadership-grid {
+    grid-template-columns: 1fr;
+}
+
+.leader-card img {
+    height: 300px;.donation-grid {
+    grid-template-columns: 1fr;
+}
+
+.account-number {
+    font-size: 22px;
+}
+}
+
+}
 
         }
 
@@ -421,30 +541,36 @@
 
 
 
-<section id="leadership">
+    
+
+    <section id="leadership">
 
     <h2>Leadership</h2>
 
     <p class="section-intro">
-
         Meet the dedicated team leading KWEPU and advancing
         environmental protection, community empowerment and
         sustainable development.
-
     </p>
 
+    <div class="leadership-grid">
 
-    <div class="cards">
+        <div class="leader-card">
+            <img src="Director.jpeg" alt="Ramanus Abade">
+            <h3>Ramanus Abade</h3>
+            <p>Director</p>
+        </div>
 
-        <div class="card">
+        <div class="leader-card">
+            <img src="Ass.Director.jpeg" alt="Joseph Odoyo">
+            <h3>Joseph Odoyo</h3>
+            <p>Assistant Director</p>
+        </div>
 
-            <h3>KWEPU Leadership</h3>
-
-            <p>
-                Director, Assistant Director and leadership profiles
-                will be added here.
-            </p>
-
+        <div class="leader-card">
+            <img src="Leader.png" alt="Margret Akinyi">
+            <h3>Margret Akinyi</h3>
+            <p>Leader</p>
         </div>
 
     </div>
@@ -517,19 +643,33 @@
     <h2>Support KWEPU</h2>
 
     <p class="section-intro">
-
         Your support helps KWEPU expand tree planting,
         environmental education, agroforestry and
         community restoration projects.
-
     </p>
 
-    <a class="button" href="#contact">
-        Support Our Work
-    </a>
+    <div class="donation-grid">
+
+        <div class="donation-card">
+            <h3>M-Pesa</h3>
+            <p>Donate via M-Pesa</p>
+            <div class="account-number">0724761771</div>
+        </div>
+
+        <div class="donation-card">
+            <h3>KCB Bank</h3>
+            <p>Account Number</p>
+            <div class="account-number">1273002660</div>
+        </div>
+
+    </div>
+
+    <p class="donation-message">
+        Thank you for supporting our mission to build greener,
+        healthier and more resilient communities.
+    </p>
 
 </section>
-
 
 
 <section id="contact">
