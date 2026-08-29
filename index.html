@@ -335,11 +335,11 @@
 
         /* LEADERSHIP */
 .leadership-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
     gap: 25px;
     margin-top: 35px;
+    align-items: stretch;
 }
 
 .leader-card {
@@ -349,14 +349,13 @@
     box-shadow: 0 3px 14px rgba(0,0,0,0.08);
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    flex: 0 1 300px;
-    max-width: 320px;
 }
 
 .leader-card img {
     width: 100%;
     height: 280px;
     object-fit: cover;
+    object-position: center top;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -546,24 +545,38 @@
     height: 65px;
 }
 
-.leader-card {
-    flex: 1 1 100%;
-    max-width: 100%;
+.leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .leader-card img {
-    height: 300px;.donation-grid {
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.goals-grid {
     grid-template-columns: 1fr;
 }
 
 .account-number {
     font-size: 22px;
 }
-}
 
 }
 
-        }
+@media (max-width: 520px) {
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-card img {
+        height: 320px;
+    }
+
+}
 
     </style>
 </head>
