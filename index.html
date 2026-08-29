@@ -26,74 +26,111 @@
         }
 
 
-        /* HEADER */
+        /* MAIN HEADER */
 
-        header {
-            background: #1f6b3a;
-            color: white;
-            padding: 15px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+.main-header {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eeeeee;
+}
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
 
-        .logo {
-            width: 75px;
-            height: 75px;
-            object-fit: contain;
-        }
+.main-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
 
-        .brand h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+.brand-text h1 {
+    margin: 0;
+    color: #12632f;
+    font-size: 27px;
+    line-height: 1.15;
+}
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 5px;
-        }
+.brand-text h1 span {
+    white-space: nowrap;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-            font-weight: bold;
-            padding: 8px 4px;
-        }
+.brand-text p {
+    margin: 7px 0 0;
+    font-size: 17px;
+    font-style: italic;
+    color: #333333;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.main-nav a {
+    color: #111111;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 3px;
+    border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #12632f;
+    border-bottom-color: #12632f;
+}
 
 
         /* HERO */
 
         .hero {
-            padding: 80px 8%;
-            text-align: center;
-            background: #dfeee2;
-        }
+    position: relative;
+    min-height: 430px;
+    background:
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.30)),
+        url("175861096_270135771433194_7508932878777501049_n.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
 
-        .hero h2 {
-            font-size: 40px;
-            margin: 0 0 15px;
-            color: #175c31;
-        }
+.hero-overlay {
+    width: 100%;
+}
 
-        .hero p {
-            max-width: 750px;
-            margin: auto;
-            font-size: 18px;
-        }
+.hero-content {
+    max-width: 650px;
+    padding: 70px 6%;
+    text-align: left;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 46px;
+    line-height: 1.12;
+    margin: 0 0 20px;
+    color: white;
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.5;
+    color: white;
+}
 
         .button {
             display: inline-block;
@@ -225,17 +262,24 @@
 }
 .leadership-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
     gap: 25px;
     margin-top: 35px;
+    align-items: stretch;
 }
 
 .leader-card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    border-radius: 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.08);
     text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 .leader-card img {
@@ -244,6 +288,16 @@
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
+}
+
+.leader-card h3 {
+    margin: 5px 0;
+    color: #1f6b3a;
+}
+
+.leader-card p {
+    margin: 0;
+    font-weight: bold;
 }
 
 .leader-card h3 {
@@ -323,27 +377,43 @@
 
         @media (max-width: 768px) {
 
-            header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
+            .main-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 18px 5%;
+}
 
-            .brand {
-                justify-content: center;
-            }
+.header-brand {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
 
-            nav {
-                justify-content: center;
-            }
+.main-logo {
+    width: 90px;
+    height: 90px;
+}
 
-            nav a {
-                margin: 3px 6px;
-            }
+.brand-text h1 {
+    font-size: 22px;
+    line-height: 1.2;
+}
 
-            .hero h2 {
-                font-size: 30px;
-            }
+.brand-text p {
+    font-size: 15px;
+}
+
+.main-nav {
+    justify-content: center;
+    gap: 8px;
+}
+
+.main-nav a {
+    margin: 2px 4px;
+    padding: 8px 4px;
+    font-size: 14px;
+}
 
             .logo {
     width: 65px;
@@ -375,36 +445,47 @@
 <body>
 
 
-<header>
+<header class="main-header">
 
-    <div class="brand">
+    <div class="header-brand">
 
-        <img src="Kwepulogo.jpeg"
-             alt="KWEPU Logo"
-             class="logo">
+        <img src="Logo.jpg"
+             alt="Kamayoge Women Environmental Protection Unit Logo"
+             class="main-logo">
 
-        <h1>KWEPU</h1>
+        <div class="brand-text">
+
+            <h1>
+                Kamayoge Women Environmental<br>
+                Protection Unit <span>(KWEPU)</span>
+            </h1>
+
+            <p>Building a greener and more resilient future</p>
+
+        </div>
 
     </div>
 
 
-    <nav>
+  <nav class="main-nav">
 
-        <a href="#about">About</a>
+    <a href="#" class="active">Home</a>
 
-        <a href="#projects">Projects</a>
+    <a href="#about">About Us</a>
 
-        <a href="#impact">Impact</a>
+    <a href="#projects">What We Do</a>
 
-        <a href="#leadership">Leadership</a>
+    <a href="#impact">Impact</a>
 
-        <a href="#gallery">Gallery</a>
+    <a href="#leadership">Leadership</a>
 
-        <a href="#donate">Donate</a>
+    <a href="#gallery">Gallery</a>
 
-        <a href="#contact">Contact</a>
+    <a href="#donate">Donate</a>
 
-    </nav>
+    <a href="#contact">Contact</a>
+
+</nav>
 
 </header>
 
@@ -412,16 +493,28 @@
 
 <div class="hero">
 
-    <h2>Kamayoge Women Environmental Protection Unit</h2>
+    <div class="hero-overlay">
 
-    <p>
-        Building healthier communities and a greener future through
-        environmental protection, tree planting, agroforestry and
-        community-led action.
-    </p>
+        <div class="hero-content">
 
-    <a class="button" href="#projects">Our Projects</a>
+            <h2>
+                Protecting Our Environment,<br>
+                Empowering Our Community
+            </h2>
 
+            <p>
+                Kamayoge Women Environmental Protection Unit (KWEPU)
+                is committed to environmental conservation, sustainable
+                livelihoods and community resilience.
+            </p>
+
+            <a class="button" href="#about">Learn More About Us</a>
+
+        </div>
+
+    </div>
+
+</div>
 </div>
 
 
@@ -571,9 +664,21 @@
             <img src="Leader.png" alt="Margret Akinyi">
             <h3>Margret Akinyi</h3>
             <p>Leader</p>
+</div>
+
+<div class="leader-card">
+    <img src="Groups Leader.jpg" alt="Linet Achieng">
+    <h3>Linet Achieng</h3>
+    <p>Groups Leader</p>
+</div>
+
+<div class="leader-card">
+    <img src="Unit Leader.jpg" alt="Nadia Venessa">
+    <h3>Nadia Venessa</h3>
+    <p>Unit Leader</p>
+</div>
         </div>
 
-    </div>
 
 </section>
 
