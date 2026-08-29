@@ -207,7 +207,58 @@
         #leadership {
             text-align: center;
         }
+/* VOLUNTEER & INTERNATIONAL PARTNERSHIPS */
 
+#volunteer-partnerships {
+    background: #edf6ee;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.partnership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.partnership-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+
+.partnership-card h3,
+.partnership-highlight h3,
+.partnership-contact h3 {
+    color: #1f6b3a;
+    margin-top: 0;
+}
+
+.partnership-highlight {
+    max-width: 900px;
+    margin: 35px auto 0;
+    padding: 28px;
+    background: white;
+    border-left: 5px solid #1f6b3a;
+    border-radius: 12px;
+}
+
+.partnership-contact {
+    max-width: 900px;
+    margin: 25px auto 0;
+    padding: 28px;
+    text-align: center;
+    background: #163c25;
+    color: white;
+    border-radius: 12px;
+}
+
+.partnership-contact a {
+    color: white;
+    font-weight: bold;
+}
 
         /* GALLERY */
 
@@ -225,12 +276,68 @@
             border-radius: 10px;
             display: block;
         }
+/* VISION & GOALS */
 
+#vision-goals {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.vision-box {
+    max-width: 850px;
+    margin: 30px auto 40px;
+    padding: 35px;
+    text-align: center;
+    background: #edf6ee;
+    border-radius: 14px;
+    border-left: 5px solid #1f6b3a;
+}
+
+.vision-box h3 {
+    color: #1f6b3a;
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.vision-box p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.goal-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+
+.goal-card h3 {
+    color: #1f6b3a;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.community-statement {
+    max-width: 850px;
+    margin: 35px auto 0;
+    padding: 22px;
+    text-align: center;
+    background: #1f6b3a;
+    color: white;
+    border-radius: 10px;
+}
 
         /* LEADERSHIP */
 .leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
     margin-top: 35px;
 }
@@ -238,9 +345,12 @@
 .leader-card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    border-radius: 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.08);
     text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 0 1 300px;
+    max-width: 320px;
 }
 
 .leader-card img {
@@ -260,12 +370,11 @@
     margin: 0;
     font-weight: bold;
 }
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 35px;
-    align-items: stretch;
+.team-heading {
+    text-align: center;
+    color: #1f6b3a;
+    font-size: 24px;
+    margin: 45px 0 10px;
 }
 
 .leader-card {
@@ -377,11 +486,28 @@
 
         @media (max-width: 768px) {
 
-            .main-header {
+    .main-header {
     flex-direction: column;
     text-align: center;
     gap: 16px;
     padding: 18px 5%;
+}
+
+.goals-grid {
+    grid-template-columns: 1fr;
+}
+
+.vision-box {
+    padding: 25px 20px;
+}
+
+.partnership-grid {
+    grid-template-columns: 1fr;
+}
+
+    .vision-box {
+        padding: 25px 20px;
+    }
 }
 
 .header-brand {
@@ -420,8 +546,9 @@
     height: 65px;
 }
 
-.leadership-grid {
-    grid-template-columns: 1fr;
+.leader-card {
+    flex: 1 1 100%;
+    max-width: 100%;
 }
 
 .leader-card img {
@@ -472,13 +599,14 @@
     <a href="#" class="active">Home</a>
 
     <a href="#about">About Us</a>
+      <a href="#vision-goals">Vision & Goals</a>
 
     <a href="#projects">What We Do</a>
 
     <a href="#impact">Impact</a>
 
-    <a href="#leadership">Leadership</a>
-
+    <a href="#leadership">Our Team</a>
+      <a href="#volunteer-partnerships">Volunteer</a>
     <a href="#gallery">Gallery</a>
 
     <a href="#donate">Donate</a>
@@ -531,7 +659,90 @@
 
 </section>
 
+<section id="vision-goals">
 
+    <h2>Our Vision & Goals</h2>
+
+    <p class="section-intro">
+        Building a greener, sustainable and more resilient future through
+        community-led environmental action.
+    </p>
+
+    <div class="vision-box">
+
+        <h3>Our Vision</h3>
+
+        <p>
+            To build greener, resilient and sustainable communities where people,
+            especially women and young people, actively protect the environment,
+            strengthen sustainable livelihoods and create lasting social and
+            environmental impact.
+        </p>
+
+    </div>
+
+
+    <div class="goals-grid">
+
+        <div class="goal-card">
+            <h3>Environmental Conservation & Restoration</h3>
+            <p>
+                Promote tree production, tree planting, ecosystem restoration,
+                nature conservation and practical climate action.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Sustainable Agriculture & Food Security</h3>
+            <p>
+                Advance agroforestry, kitchen gardens, sustainable agriculture
+                and environmentally responsible food production.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Environmental Education</h3>
+            <p>
+                Strengthen environmental and climate-change education in schools
+                and communities through practical learning and awareness programmes.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Youth, Women & Community Empowerment</h3>
+            <p>
+                Engage women, young people, schools and community groups in
+                environmental leadership, skills development and sustainable livelihoods.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Community Capacity Building</h3>
+            <p>
+                Equip communities with practical knowledge and skills that support
+                long-term environmental stewardship and resilient livelihoods.
+            </p>
+        </div>
+
+        <div class="goal-card">
+            <h3>Partnerships & Volunteer Exchange</h3>
+            <p>
+                Build long-term local and international partnerships that encourage
+                intercultural learning, volunteer service, knowledge exchange and
+                community-led development.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="community-statement">
+        <strong>Our approach is practical and community-led.</strong>
+        We believe lasting change happens when communities, schools, women,
+        young people, volunteers and partners work together.
+    </div>
+
+</section>
 
 <section id="projects">
 
@@ -636,15 +847,14 @@
 
     
 
-    <section id="leadership">
+    <h2>Our Team</h2>
 
-    <h2>Leadership</h2>
+<p class="section-intro">
+    Meet the people serving Kamayoge Women Environmental Protection Unit
+    through leadership, staff support and volunteer service.
+</p>
 
-    <p class="section-intro">
-        Meet the dedicated team leading KWEPU and advancing
-        environmental protection, community empowerment and
-        sustainable development.
-    </p>
+<h3 class="team-heading">Leadership Team</h3>
 
     <div class="leadership-grid">
 
@@ -677,10 +887,112 @@
     <h3>Nadia Venessa</h3>
     <p>Unit Leader</p>
 </div>
-        </div>
+        </div><h3 class="team-heading">Staff</h3>
 
+<div class="leadership-grid">
+    <!-- Staff profiles will be added here -->
+</div>
+
+
+<h3 class="team-heading">Volunteers</h3>
+
+<div class="leadership-grid">
+    <!-- Volunteer profiles will be added here -->
+</div>
 
 </section>
+
+<section id="volunteer-partnerships">
+
+    <h2>Volunteer & International Partnerships</h2>
+
+    <p class="section-intro">
+        KWEPU welcomes long-term partnerships with volunteer-sending organizations,
+        including German weltwärts organizations, and international volunteers
+        interested in environmental conservation, climate action, sustainable
+        agriculture, schools, youth and community development.
+    </p>
+
+    <div class="partnership-grid">
+
+        <div class="partnership-card">
+            <h3>Volunteer Opportunities</h3>
+            <p>
+                Volunteers can support tree nursery management, seedling propagation,
+                tree planting, agroforestry, kitchen gardens, school environmental
+                programmes, youth engagement, community outreach, project documentation
+                and environmental awareness activities.
+            </p>
+        </div>
+
+        <div class="partnership-card">
+            <h3>Accommodation & Welfare</h3>
+            <p>
+                KWEPU has secure hostel accommodation with capacity for up to six
+                volunteers. We provide local orientation, community integration,
+                project supervision, guidance on local culture and practices, and
+                support throughout the placement.
+            </p>
+        </div>
+
+        <div class="partnership-card">
+            <h3>Arrival & Travel Support</h3>
+            <p>
+                KWEPU can coordinate volunteer arrival and onward travel from Kisumu
+                or Nairobi. Where arrival times require an overnight stay, we can
+                assist with secure accommodation and organize affordable onward
+                transport in consultation with the volunteer or sending organization.
+            </p>
+        </div>
+
+        <div class="partnership-card">
+            <h3>Supervision & Partnership</h3>
+            <p>
+                We work with sending organizations to agree on volunteer duties,
+                supervision, safeguarding, accommodation, working hours, emergency
+                procedures, monitoring, evaluation and communication throughout
+                the placement.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="partnership-highlight">
+        <h3>What We Are Looking For</h3>
+        <p>
+            We welcome volunteers and partner organizations interested in
+            Environment • Climate Action • Agroforestry • Sustainable Agriculture •
+            Schools • Youth • Community Development.
+        </p>
+        <p>
+            We especially value volunteers who are willing to learn from the local
+            community, work respectfully with Kenyan partners and contribute to
+            long-term community development.
+        </p>
+    </div>
+
+    <div class="partnership-contact">
+        <h3>Partnership Contact</h3>
+
+        <p>
+            <strong>Ramanus Abade</strong><br>
+            Telephone / WhatsApp:
+            <a href="tel:+254724761771">+254 724 761 771</a><br>
+            Email:
+            <a href="mailto:ramanusojwang2002@gmail.com">ramanusojwang2002@gmail.com</a>
+        </p>
+
+        <p>
+            <strong>Joseph Odoyo</strong><br>
+            Telephone / WhatsApp:
+            <a href="tel:+254721200479">+254 721 200 479</a><br>
+            Email:
+            <a href="mailto:joseooko.o@gmail.com">joseooko.o@gmail.com</a>
+        </p>
+    </div>
+
+</section>
+
 
 
 
@@ -790,8 +1102,8 @@
     <div class="contact-details">
 
        <p><strong>Email:</strong><br>
-<a href="mailto:Ramanusojwang2002@gmail.com">Ramanusojwang2002@gmail.com</a><br>
-<a href="mailto:Joseooko.o@gmail.com">Joseooko.o@gmail.com</a>
+<a href="mailto:ramanusojwang2002@gmail.com">Ramanusojwang2002@gmail.com</a><br>
+<a href="mailto:joseooko.o@gmail.com">Joseooko.o@gmail.com</a>
 </p>
 
 <p><strong>Phone:</strong><br>
