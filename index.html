@@ -23,7 +23,22 @@
       flex-wrap: wrap;}
     header h1 { margin: 0; font-size: 24px; }
     nav a {
-      color: white;
+      .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 24px;
+}
       text-decoration: none;
       margin: 0 8px;
       font-weight: bold;}
@@ -67,39 +82,61 @@
       box-shadow: 0 2px 10px rgba(0,0,0,.08);}
     .card h3 { color: #1f6b3a; }
     .impact {
-      background: #edf6ee;}
+      background: #edf6ee;}.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
     footer {
       background: #163c25;
       color: white;
       text-align: center;
       padding: 30px 8%;}
   </style>
-</head>
-<body><img src="kwepulogo.jpeg"
-alt="KWEPU Logo" style="max-width:180px;">
+<body>
+
 <header>
-  <h1>KWEPU</h1>
-  <nav>
+    <div class="brand">
+        <img src="Kwepulogo.jpeg" alt="KWEPU Logo" class="logo">
+        <h1>KWEPU</h1>
+    </div>
+
+   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#impact">Impact</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#donate">Donate</a>
     <a href="#contact">Contact</a>
-  </nav>
+</nav>
 </header>
 <div class="hero">
   <h2>Kenya Women Environmental Protection Unit</h2>
   <p>
-    Building healthier communities and a greener future through
-    environmental protection, tree planting, agroforestry and
-    community-led action.
-  </p>
-  <a class="button" href="#projects">Our Projects</a>
-</div>
-<section id="about">
-  <h2>About KWEPU</h2>
-  <p>
-    KWEPU was established in 2019 in Rusinga, Homa Bay County, Kenya.
-    We work with communities and schools to protect the environment,
+   <body>
+
+<header>
+    <div class="brand">
+        <img src="kwepulogo.jpeg" alt="KWEPU Logo" class="logo">
+        <h1>KWEPU</h1>
+    </div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#impact">Impact</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
     restore landscapes and promote sustainable livelihoods.
   </p>
 </section>
@@ -140,6 +177,68 @@ alt="KWEPU Logo" style="max-width:180px;">
       <p>Community-led environmental action in Rusinga.</p>
     </div>
   </div>
+</section><section id="leadership">
+    <h2>Leadership</h2>
+    <p style="text-align:center;">
+        Meet the dedicated team leading KWEPU and advancing environmental protection,
+        community empowerment and sustainable development.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>KWEPU Leadership</h3>
+            <p>Leadership profiles and photographs will be added here.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <p style="text-align:center;">
+        Highlights from KWEPU tree planting, environmental education,
+        school projects and community activities.
+    </p>
+
+    <div class="gallery">
+        <img src="175861096_270135771433194_7508932878777501049_n.jpg" alt="KWEPU environmental activity">
+
+<img src="176854879_271360624644042_4163683579716049580_n.jpg" alt="KWEPU community activity">
+
+<img src="178827824_274531260993645_5430504235100671051_n.jpg" alt="KWEPU environmental project">
+
+<img src="179034498_276222124157892_1402540310030450672_n.jpg" alt="KWEPU tree planting activity">
+
+<img src="179195487_274533400993431_122569645581934698_n.jpg" alt="KWEPU community project">
+
+<img src="179525517_276488717464566_9009304736463187484_n.jpg" alt="KWEPU environmental conservation activity">
+
+<img src="180550443_276917624088342_4309446399048397906_n.jpg" alt="KWEPU project activity">
+
+<img src="309308576_176573121559866_5211815285159488892_n.jpg" alt="KWEPU community environmental activity">
+
+<img src="475412663_1137564321356997_8668955642966313222_n.jpg" alt="KWEPU environmental restoration">
+
+<img src="476805312_1145972063849556_7739389218486389052_n.jpg" alt="KWEPU community engagement">
+
+<img src="476834305_1145971960516233_8932604420502651316_n.jpg" alt="KWEPU environmental programme">
+
+<img src="480208604_1149674776812618_6738704117484092477_n.jpg" alt="KWEPU environmental activity">
+
+<img src="480957494_1159377989175630_3447797188469261156_n.jpg" alt="KWEPU community project">
+    </div>
+</section>
+
+<section id="donate">
+    <h2>Support KWEPU</h2>
+
+    <p style="text-align:center; max-width:750px; margin:0 auto;">
+        Your support helps KWEPU expand tree planting, environmental education,
+        agroforestry and community restoration projects.
+    </p>
+
+    <div style="text-align:center;">
+        <a class="button" href="#contact">Support Our Work</a>
+    </div>
 </section>
 <section id="contact">
   <h2>Contact KWEPU</h2>
