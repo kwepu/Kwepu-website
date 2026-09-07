@@ -618,11 +618,35 @@
 
 }
 
+
+
+        /* PHASE 3 POLISH */
+        .skip-link { position:absolute; left:-9999px; top:auto; }
+        .skip-link:focus { left:16px; top:16px; z-index:9999; background:#fff; color:#12632f; padding:10px 14px; border-radius:6px; }
+        .main-header { position:sticky; top:0; z-index:1000; box-shadow:0 2px 14px rgba(0,0,0,.06); }
+        .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:25px; }
+        .hero-actions .button { margin-top:0; }
+        .button.secondary { background:rgba(255,255,255,.14); border:2px solid #fff; }
+        .button:focus-visible, .main-nav a:focus-visible, a:focus-visible { outline:3px solid #f0c94a; outline-offset:3px; }
+        .gallery img { transition:transform .2s ease, box-shadow .2s ease; }
+        .gallery img:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,.15); }
+        .contact-details a { overflow-wrap:anywhere; }
+        @media (max-width:768px) {
+            .main-header { position:static; }
+            .main-nav { width:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; }
+            .main-nav a { background:#f2f7f3; border-radius:8px; padding:9px 6px; }
+            .hero { min-height:390px; }
+            .hero-content { padding:55px 7%; }
+            .hero h2 { font-size:clamp(34px,10vw,46px); }
+            section { padding-left:6%; padding-right:6%; }
+        }
+
     </style>
 </head>
 
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 
 <header class="main-header">
@@ -647,7 +671,7 @@
     </div>
 
 
-  <nav class="main-nav">
+  <nav class="main-nav" aria-label="Main navigation">
 
     <a href="#" class="active">Home</a>
 
@@ -672,6 +696,7 @@
 
 
 
+<main id="main-content">
 <div class="hero">
 
     <div class="hero-overlay">
@@ -689,15 +714,13 @@
                 livelihoods and community resilience.
             </p>
 
-            <a class="button" href="about.html">Learn More About Us</a>
+            <div class="hero-actions"><a class="button" href="projects.html">Explore Our Projects</a><a class="button secondary" href="volunteer.html">Volunteer With KWEPU</a></div>
 
         </div>
 
     </div>
 
 </div>
-</div>
-
 
 
 <section id="about">
@@ -1070,116 +1093,116 @@
 
     <div class="gallery">
 
-        <img src="175861096_270135771433194_7508932878777501049_n.jpg"
+        <img loading="lazy" decoding="async" src="175861096_270135771433194_7508932878777501049_n.jpg"
              alt="KWEPU environmental activity">
 
-        <img src="176854879_271360624644042_4163683579716049580_n.jpg"
+        <img loading="lazy" decoding="async" src="176854879_271360624644042_4163683579716049580_n.jpg"
              alt="KWEPU community activity">
 
-        <img src="178827824_274531260993645_5430504235100671051_n.jpg"
+        <img loading="lazy" decoding="async" src="178827824_274531260993645_5430504235100671051_n.jpg"
              alt="KWEPU environmental project">
 
-        <img src="179034498_276222124157892_1402540310030450672_n.jpg"
+        <img loading="lazy" decoding="async" src="179034498_276222124157892_1402540310030450672_n.jpg"
              alt="KWEPU tree planting activity">
 
-        <img src="179195487_274533400993431_122569645581934698_n.jpg"
+        <img loading="lazy" decoding="async" src="179195487_274533400993431_122569645581934698_n.jpg"
              alt="KWEPU community project">
 
-        <img src="179525517_276488717464566_9009304736463187484_n.jpg"
+        <img loading="lazy" decoding="async" src="179525517_276488717464566_9009304736463187484_n.jpg"
              alt="KWEPU environmental conservation activity">
 
-        <img src="180550443_276917624088342_4309446399048397906_n.jpg"
+        <img loading="lazy" decoding="async" src="180550443_276917624088342_4309446399048397906_n.jpg"
              alt="KWEPU project activity">
 
-        <img src="309308576_176573121559866_5211815285159488892_n.jpg"
+        <img loading="lazy" decoding="async" src="309308576_176573121559866_5211815285159488892_n.jpg"
              alt="KWEPU community environmental activity">
 
-        <img src="475412663_1137564321356997_8668955642966313222_n.jpg"
+        <img loading="lazy" decoding="async" src="475412663_1137564321356997_8668955642966313222_n.jpg"
              alt="KWEPU environmental restoration">
 
-        <img src="476805312_1145972063849556_7739389218486389052_n.jpg"
+        <img loading="lazy" decoding="async" src="476805312_1145972063849556_7739389218486389052_n.jpg"
              alt="KWEPU community engagement">
 
-        <img src="476834305_1145971960516233_8932604420502651316_n.jpg"
+        <img loading="lazy" decoding="async" src="476834305_1145971960516233_8932604420502651316_n.jpg"
              alt="KWEPU environmental programme">
 
 
-        <img src="480957494_1159377989175630_3447797188469261156_n.jpg"
+        <img loading="lazy" decoding="async" src="480957494_1159377989175630_3447797188469261156_n.jpg"
              alt="KWEPU community project">
 
-        <img src="WhatsApp Image 2026-09-01 at 16.53.20.jpeg" alt="KWEPU activity">
+        <img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.20.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.21.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.21.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.22 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.22 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.22.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.22.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.23 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.23 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.23.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.23.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.24.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.24.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.25.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.25.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.27.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.27.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.28.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.28.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.30.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.30.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.31.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.31.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.32.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.32.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.36 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.36 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.36.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.36.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.38 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.38 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.38.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.38.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.39 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.39 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.39.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.39.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.40 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.40 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.40.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.40.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.41 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.41 (2).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41 (2).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.41.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.42.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.42.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.43.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.43.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.44.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.44.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.46.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.46.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.47.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.47.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.48 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.48 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.53.48.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.48.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.58.12.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.12.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.58.13 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.13 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 16.58.13.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.13.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 17.01.04.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.04.jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 17.01.05 (1).jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.05 (1).jpeg" alt="KWEPU activity">
 
-<img src="WhatsApp Image 2026-09-01 at 17.01.05.jpeg" alt="KWEPU activity">
+<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.05.jpeg" alt="KWEPU activity">
 
     </div>
 
@@ -1262,6 +1285,7 @@ P.O. Box 134, Mbita
 
 
 
+</main>
 <footer>
 
     <p>
