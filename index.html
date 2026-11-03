@@ -305,17 +305,51 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-auto-rows: 145px;
+            grid-auto-flow: dense;
+            gap: 16px;
             margin-top: 30px;
         }
 
-        .gallery img {
+        .gallery-item {
+            position: relative;
+            margin: 0;
+            min-width: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #eaf2ec;
+            box-shadow: 0 4px 16px rgba(15, 50, 30, .10);
+        }
+        .gallery-item:nth-child(7n + 1) { grid-row: span 2; }
+        .gallery-item:nth-child(7n + 4) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(7n + 6) { grid-row: span 2; }
+        .gallery-item img {
             width: 100%;
-            height: 220px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px;
             display: block;
+            transition: transform .35s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.04); }
+        .gallery-item figcaption {
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            padding: 12px 14px;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.3;
+            background: linear-gradient(transparent, rgba(0,0,0,.78));
+            text-shadow: 0 1px 3px rgba(0,0,0,.45);
+        }
+        @media (max-width: 850px) {
+            .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 130px; }
+        }
+        @media (max-width: 560px) {
+            .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 125px; gap: 10px; }
+            .gallery-item:nth-child(7n + 4) { grid-column: span 1; }
+            .gallery-item figcaption { padding: 8px 10px; font-size: 12px; }
         }
 /* VISION & GOALS */
 
@@ -755,22 +789,22 @@
     .leadership-track { animation: none; }
 }
 
-/* RUSINGA HOMEPAGE DESIGN — responsive, stable image layout */
+/* RUSINGA HOMEPAGE DESIGN — balanced layout with visible map and photo pair */
 .rusinga-home { max-width:none; padding:0; margin:0; background:#f4f9fc; color:#102f4f; }
-.rusinga-home-grid { display:grid; grid-template-columns:minmax(300px,1fr) minmax(330px,1fr) minmax(300px,1.08fr); gap:0; align-items:stretch; }
+.rusinga-home-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr); gap:0; align-items:stretch; }
 .rusinga-home-intro { padding:30px clamp(22px,3vw,48px); align-self:center; background:linear-gradient(120deg,#f4f9ff,#eaf5ff); }
 .rusinga-home-intro .home-eyebrow { margin:0 0 4px; text-transform:uppercase; letter-spacing:.18em; font-size:14px; font-weight:800; color:#087344; }
 .rusinga-home-intro h2 { text-align:left; margin:0; font-size:clamp(36px,4.1vw,64px); line-height:1.05; color:#073e3a; letter-spacing:-.025em; }
 .rusinga-home-intro h3 { margin:2px 0 16px; font-size:clamp(25px,3vw,44px); font-weight:500; line-height:1.1; color:#064c43; }
-.rusinga-home-intro p:not(.home-eyebrow) { font-size:clamp(15px,1.35vw,20px); line-height:1.45; margin:0 0 16px; color:#173a5c; }
+.rusinga-home-intro p:not(.home-eyebrow) { font-size:clamp(15px,1.25vw,19px); line-height:1.45; margin:0 0 16px; color:#173a5c; }
 .rusinga-home-cta { display:inline-flex; gap:22px; align-items:center; background:#087648; color:white; padding:12px 22px; border-radius:999px; text-decoration:none; font-weight:800; margin-top:4px; }
 .rusinga-home-cta:hover { background:#065e39; }
-.rusinga-home-map { background:#d9f2ff; min-width:0; display:flex; align-items:stretch; }
-.rusinga-home-map img { width:100%; height:100%; min-height:420px; object-fit:cover; object-position:center; display:block; }
-.rusinga-home-photo-stack { display:grid; grid-template-rows:1.8fr 1fr; gap:5px; min-width:0; min-height:420px; }
-.rusinga-home-photo { margin:0; position:relative; min-height:0; overflow:hidden; }
-.rusinga-home-photo img { width:100%; height:100%; min-height:0; object-fit:cover; display:block; }
-.rusinga-home-photo figcaption { position:absolute; bottom:0; left:0; right:0; padding:12px 16px; color:#fff; font-size:15px; font-weight:700; background:linear-gradient(transparent,rgba(0,0,0,.72)); }
+.rusinga-home-map { background:#d9f2ff; min-width:0; display:flex; align-items:center; justify-content:center; padding:14px; }
+.rusinga-home-map img { width:100%; height:auto; max-height:390px; object-fit:contain; object-position:center; display:block; }
+.rusinga-home-photo-row { display:grid; grid-template-columns:1.15fr 1fr; gap:8px; padding:8px 12px 0; background:#fff; }
+.rusinga-home-photo { margin:0; position:relative; height:clamp(190px,25vw,330px); overflow:hidden; border-radius:8px; min-width:0; }
+.rusinga-home-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.rusinga-home-photo figcaption { position:absolute; bottom:0; left:0; right:0; padding:12px 16px; color:#fff; font-size:15px; font-weight:700; background:linear-gradient(transparent,rgba(0,0,0,.76)); }
 .rusinga-home-cards { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; padding:10px 16px 14px; background:#fff; }
 .rusinga-home-card { background:#f7faf9; text-align:center; border-radius:5px; overflow:hidden; padding:0 0 15px; }
 .rusinga-home-card > img { display:block; width:100%; height:clamp(125px,11vw,180px); object-fit:cover; }
@@ -781,266 +815,21 @@
 .rusinga-home-card:nth-child(1) h4,.rusinga-home-card:nth-child(2) h4,.rusinga-home-card:nth-child(3) h4 { color:#0863a8; }
 .rusinga-home-card p { margin:0 auto; padding:0 12px; max-width:290px; font-size:clamp(13px,1vw,16px); line-height:1.4; color:#173a5c; }
 .rusinga-home-closing { padding:18px 20px; text-align:center; background:#e2f2ed; color:#073e3a; font-family:Georgia,serif; font-size:clamp(20px,2vw,30px); line-height:1.25; }
-@media (max-width:1100px) {
+@media (max-width:1000px) {
  .rusinga-home-grid { grid-template-columns:1fr 1fr; }
- .rusinga-home-intro { grid-column:1; grid-row:1; }
- .rusinga-home-map { grid-column:2; grid-row:1; }
- .rusinga-home-photo-stack { grid-column:1 / -1; grid-row:2; grid-template-columns:1.3fr 1fr; grid-template-rows:240px; min-height:240px; }
+ .rusinga-home-intro { padding:28px; }
+ .rusinga-home-map img { max-height:340px; }
  .rusinga-home-cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 @media (max-width:680px) {
  .rusinga-home-grid { grid-template-columns:1fr; }
- .rusinga-home-intro { grid-column:auto; grid-row:auto; padding:28px 22px; }
- .rusinga-home-map { grid-column:auto; grid-row:auto; }
- .rusinga-home-map img { min-height:300px; max-height:400px; }
- .rusinga-home-photo-stack { grid-column:auto; grid-row:auto; grid-template-columns:1fr; grid-template-rows:220px 180px; min-height:auto; }
- .rusinga-home-cards { grid-template-columns:1fr 1fr; gap:10px; padding:10px; }
- .rusinga-home-card > img { height:140px; }
- .rusinga-home-card p { font-size:13px; padding:0 8px; }
- .rusinga-home-card h4 { font-size:15px; }
+ .rusinga-home-intro { padding:28px 22px; }
+ .rusinga-home-map img { max-height:320px; }
+ .rusinga-home-photo-row { grid-template-columns:1fr; }
+ .rusinga-home-photo { height:220px; }
+ .rusinga-home-cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
-@media (max-width:420px) {
- .rusinga-home-cards { grid-template-columns:1fr; }
- .rusinga-home-card > img { height:190px; }
-}
-
-
-/* HOMEPAGE REFINEMENT — proportions, map framing, header and card gallery */
-@media (min-width: 1101px) {
-  .main-header {
-    padding: 8px 3.5%;
-    gap: 22px;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-  .header-brand {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 5px;
-    flex: 0 1 42%;
-    min-width: 0;
-  }
-  .main-logo {
-    width: 62px;
-    height: 62px;
-    flex: 0 0 62px;
-  }
-  .brand-text h1 {
-    font-size: clamp(18px, 1.35vw, 23px);
-    line-height: 1.18;
-  }
-  .brand-text h1 br { display: none; }
-  .brand-text p {
-    margin-top: 4px;
-    font-size: 14px;
-  }
-  .main-nav {
-    flex: 1 1 auto;
-    gap: clamp(7px, .85vw, 14px);
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-  }
-  .main-nav a {
-    font-size: clamp(12px, .82vw, 14px);
-    white-space: nowrap;
-    padding: 8px 2px;
-  }
-}
-
-.rusinga-home-grid {
-  grid-template-columns: minmax(0, .96fr) minmax(0, 1.02fr) minmax(0, 1.02fr);
-  height: clamp(500px, 34vw, 580px);
-  min-height: 0;
-  align-items: stretch;
-}
-.rusinga-home-intro {
-  min-width: 0;
-  padding: clamp(22px, 2.4vw, 38px);
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.rusinga-home-intro h2 {
-  font-size: clamp(35px, 3.2vw, 56px);
-  line-height: 1.03;
-}
-.rusinga-home-intro h3 {
-  font-size: clamp(25px, 2.4vw, 39px);
-  margin-bottom: 12px;
-}
-.rusinga-home-intro p:not(.home-eyebrow) {
-  font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.42;
-  margin-bottom: 12px;
-}
-.rusinga-home-cta {
-  align-self: flex-start;
-  padding: 11px 18px;
-  margin-top: 2px;
-  font-size: 14px;
-}
-.rusinga-home-map {
-  min-height: 0;
-  height: 100%;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  background: #d8f1ff;
-}
-.rusinga-home-map img {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  max-height: none;
-  object-fit: contain;
-  object-position: center;
-  padding: 8px;
-}
-.rusinga-home-photo-stack {
-  height: 100%;
-  min-height: 0;
-  grid-template-rows: 1.7fr 1fr;
-  gap: 5px;
-}
-.rusinga-home-photo {
-  min-height: 0;
-  height: 100%;
-}
-.rusinga-home-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  object-position: center;
-}
-.rusinga-home-photo:first-child img { object-position: center 38%; }
-.rusinga-home-photo figcaption {
-  font-size: clamp(12px, .9vw, 15px);
-  padding: 10px 13px;
-}
-.rusinga-home-cards {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
-  padding: 16px clamp(16px, 2vw, 30px) 22px;
-  align-items: stretch;
-}
-.rusinga-home-card {
-  border: 1px solid #e3ece8;
-  border-radius: 12px;
-  box-shadow: 0 5px 16px rgba(17, 65, 48, .07);
-  padding-bottom: 18px;
-  min-width: 0;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.rusinga-home-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 9px 24px rgba(17, 65, 48, .12);
-}
-.rusinga-home-card > img {
-  height: clamp(135px, 11vw, 180px);
-  object-fit: cover;
-}
-.rusinga-home-card-icon {
-  width: 54px;
-  height: 54px;
-  margin-top: -27px;
-}
-.rusinga-home-card h4 {
-  margin: 5px 10px 8px;
-  font-size: clamp(15px, 1.18vw, 19px);
-}
-.rusinga-home-card p {
-  padding: 0 13px;
-  font-size: clamp(13px, .95vw, 15px);
-  line-height: 1.48;
-}
-.rusinga-home-closing {
-  padding: 20px 16px;
-  font-size: clamp(20px, 1.8vw, 28px);
-}
-
-@media (max-width: 1100px) {
-  .rusinga-home-grid {
-    height: auto;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-  .rusinga-home-intro {
-    min-height: 480px;
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .rusinga-home-map {
-    min-height: 480px;
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .rusinga-home-map img {
-    height: 100%;
-    min-height: 0;
-    object-fit: contain;
-  }
-  .rusinga-home-photo-stack {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    height: 300px;
-    min-height: 0;
-    grid-template-columns: 1.35fr 1fr;
-    grid-template-rows: 1fr;
-  }
-  .rusinga-home-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 680px) {
-  .main-header { gap: 12px; }
-  .header-brand { flex-direction: column; align-items: center; }
-  .main-logo { width: 72px; height: 72px; }
-  .brand-text h1 { font-size: 19px; }
-  .brand-text h1 br { display: none; }
-  .rusinga-home-grid {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-  }
-  .rusinga-home-intro {
-    min-height: 0;
-    padding: 28px 22px 30px;
-  }
-  .rusinga-home-intro h2 { font-size: clamp(36px, 9vw, 48px); }
-  .rusinga-home-intro h3 { font-size: 28px; }
-  .rusinga-home-intro p:not(.home-eyebrow) { font-size: 16px; }
-  .rusinga-home-map { min-height: 0; height: auto; }
-  .rusinga-home-map img {
-    width: 100%;
-    height: auto;
-    max-height: 480px;
-    min-height: 0;
-    padding: 8px;
-    object-fit: contain;
-  }
-  .rusinga-home-photo-stack {
-    display: grid;
-    height: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: 260px 200px;
-  }
-  .rusinga-home-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    padding: 12px;
-  }
-  .rusinga-home-card > img { height: 145px; }
-  .rusinga-home-card h4 { font-size: 15px; }
-  .rusinga-home-card p { font-size: 13px; padding: 0 9px; }
-}
-@media (max-width: 420px) {
-  .rusinga-home-cards { grid-template-columns: 1fr; }
-  .rusinga-home-card > img { height: 190px; }
-}
-
+@media (max-width:420px) { .rusinga-home-cards { grid-template-columns:1fr; } }
 </style>
 </head>
 
@@ -1112,16 +901,18 @@
       <img src="rusinga-home-map-reference.jpg" alt="Illustrated location overview showing Kenya, Homa Bay County and Rusinga Island in Lake Victoria">
     </div>
 
-    <div class="rusinga-home-photo-stack">
-      <figure class="rusinga-home-photo">
-        <img src="rusinga-lake-livelihoods.jpg" alt="A local fisher working on Lake Victoria">
-        <figcaption>Sustainable livelihoods on Lake Victoria</figcaption>
-      </figure>
-      <figure class="rusinga-home-photo">
-        <img src="rusinga-bridge-aerial.jpg" alt="Aerial view of the bridge connecting Rusinga Island to the mainland">
-        <figcaption>Rusinga Island bridge connection</figcaption>
-      </figure>
-    </div>
+
+  </div>
+
+  <div class="rusinga-home-photo-row" aria-label="Rusinga Island livelihoods and connection">
+    <figure class="rusinga-home-photo">
+      <img src="rusinga-lake-livelihoods.jpg" alt="A local fisher working on Lake Victoria">
+      <figcaption>Sustainable livelihoods on Lake Victoria</figcaption>
+    </figure>
+    <figure class="rusinga-home-photo">
+      <img src="rusinga-bridge-aerial.jpg" alt="Aerial view of the bridge connecting Rusinga Island to the mainland">
+      <figcaption>Rusinga Island bridge connection</figcaption>
+    </figure>
   </div>
 
   <div class="rusinga-home-cards" aria-label="Rusinga Island and KWEPU's community priorities">
@@ -1554,116 +1345,116 @@
 
     <div class="gallery">
 
-        <img loading="lazy" decoding="async" src="175861096_270135771433194_7508932878777501049_n.jpg"
-             alt="KWEPU environmental activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="175861096_270135771433194_7508932878777501049_n.jpg"
+             alt="KWEPU environmental activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="176854879_271360624644042_4163683579716049580_n.jpg"
-             alt="KWEPU community activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="176854879_271360624644042_4163683579716049580_n.jpg"
+             alt="KWEPU community activity"><figcaption>Community engagement</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="178827824_274531260993645_5430504235100671051_n.jpg"
-             alt="KWEPU environmental project">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="178827824_274531260993645_5430504235100671051_n.jpg"
+             alt="KWEPU environmental project"><figcaption>KWEPU community activities</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="179034498_276222124157892_1402540310030450672_n.jpg"
-             alt="KWEPU tree planting activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="179034498_276222124157892_1402540310030450672_n.jpg"
+             alt="KWEPU tree planting activity"><figcaption>Tree nursery & environmental care</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="179195487_274533400993431_122569645581934698_n.jpg"
-             alt="KWEPU community project">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="179195487_274533400993431_122569645581934698_n.jpg"
+             alt="KWEPU community project"><figcaption>Community engagement</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="179525517_276488717464566_9009304736463187484_n.jpg"
-             alt="KWEPU environmental conservation activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="179525517_276488717464566_9009304736463187484_n.jpg"
+             alt="KWEPU environmental conservation activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="180550443_276917624088342_4309446399048397906_n.jpg"
-             alt="KWEPU project activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="180550443_276917624088342_4309446399048397906_n.jpg"
+             alt="KWEPU project activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="309308576_176573121559866_5211815285159488892_n.jpg"
-             alt="KWEPU community environmental activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="309308576_176573121559866_5211815285159488892_n.jpg"
+             alt="KWEPU community environmental activity"><figcaption>Community engagement</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="475412663_1137564321356997_8668955642966313222_n.jpg"
-             alt="KWEPU environmental restoration">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="475412663_1137564321356997_8668955642966313222_n.jpg"
+             alt="KWEPU environmental restoration"><figcaption>KWEPU community activities</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="476805312_1145972063849556_7739389218486389052_n.jpg"
-             alt="KWEPU community engagement">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="476805312_1145972063849556_7739389218486389052_n.jpg"
+             alt="KWEPU community engagement"><figcaption>Community engagement</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="476834305_1145971960516233_8932604420502651316_n.jpg"
-             alt="KWEPU environmental programme">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="476834305_1145971960516233_8932604420502651316_n.jpg"
+             alt="KWEPU environmental programme"><figcaption>KWEPU community activities</figcaption></figure>
 
 
-        <img loading="lazy" decoding="async" src="480957494_1159377989175630_3447797188469261156_n.jpg"
-             alt="KWEPU community project">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="480957494_1159377989175630_3447797188469261156_n.jpg"
+             alt="KWEPU community project"><figcaption>Community engagement</figcaption></figure>
 
-        <img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.20.jpeg" alt="KWEPU activity">
+        <figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.20.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.21.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.21.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.22 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.22 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.22.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.22.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.23 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.23 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.23.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.23.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.24.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.24.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.25.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.25.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.27.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.27.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.28.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.28.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.30.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.30.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.31.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.31.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.32.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.32.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.36 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.36 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.36.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.36.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.38 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.38 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.38.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.38.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.39 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.39 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.39.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.39.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.40 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.40 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.40.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.40.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41 (2).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41 (2).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.41.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.42.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.42.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.43.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.43.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.44.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.44.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.46.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.46.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.47.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.47.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.48 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.48 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.48.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.53.48.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.12.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.12.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.13 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.13 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.13.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 16.58.13.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.04.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.04.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.05 (1).jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.05 (1).jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
-<img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.05.jpeg" alt="KWEPU activity">
+<figure class="gallery-item"><img loading="lazy" decoding="async" src="WhatsApp Image 2026-09-01 at 17.01.05.jpeg" alt="KWEPU activity"><figcaption>KWEPU community activities</figcaption></figure>
 
     </div>
 
