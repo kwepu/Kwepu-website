@@ -754,6 +754,56 @@
     .leadership-carousel { overflow-x: auto; }
     .leadership-track { animation: none; }
 }
+
+/* RUSINGA HOMEPAGE DESIGN — responsive, stable image layout */
+.rusinga-home { max-width:none; padding:0; margin:0; background:#f4f9fc; color:#102f4f; }
+.rusinga-home-grid { display:grid; grid-template-columns:minmax(300px,1fr) minmax(330px,1fr) minmax(300px,1.08fr); gap:0; align-items:stretch; }
+.rusinga-home-intro { padding:30px clamp(22px,3vw,48px); align-self:center; background:linear-gradient(120deg,#f4f9ff,#eaf5ff); }
+.rusinga-home-intro .home-eyebrow { margin:0 0 4px; text-transform:uppercase; letter-spacing:.18em; font-size:14px; font-weight:800; color:#087344; }
+.rusinga-home-intro h2 { text-align:left; margin:0; font-size:clamp(36px,4.1vw,64px); line-height:1.05; color:#073e3a; letter-spacing:-.025em; }
+.rusinga-home-intro h3 { margin:2px 0 16px; font-size:clamp(25px,3vw,44px); font-weight:500; line-height:1.1; color:#064c43; }
+.rusinga-home-intro p:not(.home-eyebrow) { font-size:clamp(15px,1.35vw,20px); line-height:1.45; margin:0 0 16px; color:#173a5c; }
+.rusinga-home-cta { display:inline-flex; gap:22px; align-items:center; background:#087648; color:white; padding:12px 22px; border-radius:999px; text-decoration:none; font-weight:800; margin-top:4px; }
+.rusinga-home-cta:hover { background:#065e39; }
+.rusinga-home-map { background:#d9f2ff; min-width:0; display:flex; align-items:stretch; }
+.rusinga-home-map img { width:100%; height:100%; min-height:420px; object-fit:cover; object-position:center; display:block; }
+.rusinga-home-photo-stack { display:grid; grid-template-rows:1.8fr 1fr; gap:5px; min-width:0; min-height:420px; }
+.rusinga-home-photo { margin:0; position:relative; min-height:0; overflow:hidden; }
+.rusinga-home-photo img { width:100%; height:100%; min-height:0; object-fit:cover; display:block; }
+.rusinga-home-photo figcaption { position:absolute; bottom:0; left:0; right:0; padding:12px 16px; color:#fff; font-size:15px; font-weight:700; background:linear-gradient(transparent,rgba(0,0,0,.72)); }
+.rusinga-home-cards { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; padding:10px 16px 14px; background:#fff; }
+.rusinga-home-card { background:#f7faf9; text-align:center; border-radius:5px; overflow:hidden; padding:0 0 15px; }
+.rusinga-home-card > img { display:block; width:100%; height:clamp(125px,11vw,180px); object-fit:cover; }
+.rusinga-home-card-icon { width:56px; height:56px; display:grid; place-items:center; border-radius:50%; background:#167b43; color:#fff; border:3px solid white; font-size:26px; margin:-28px auto 4px; position:relative; }
+.rusinga-home-card-icon.blue { background:#0871bd; }
+.rusinga-home-card-icon.gold { background:#b18a10; }
+.rusinga-home-card h4 { margin:3px 8px 5px; color:#075a41; font-size:clamp(15px,1.4vw,20px); line-height:1.2; }
+.rusinga-home-card:nth-child(1) h4,.rusinga-home-card:nth-child(2) h4,.rusinga-home-card:nth-child(3) h4 { color:#0863a8; }
+.rusinga-home-card p { margin:0 auto; padding:0 12px; max-width:290px; font-size:clamp(13px,1vw,16px); line-height:1.4; color:#173a5c; }
+.rusinga-home-closing { padding:18px 20px; text-align:center; background:#e2f2ed; color:#073e3a; font-family:Georgia,serif; font-size:clamp(20px,2vw,30px); line-height:1.25; }
+@media (max-width:1100px) {
+ .rusinga-home-grid { grid-template-columns:1fr 1fr; }
+ .rusinga-home-intro { grid-column:1; grid-row:1; }
+ .rusinga-home-map { grid-column:2; grid-row:1; }
+ .rusinga-home-photo-stack { grid-column:1 / -1; grid-row:2; grid-template-columns:1.3fr 1fr; grid-template-rows:240px; min-height:240px; }
+ .rusinga-home-cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media (max-width:680px) {
+ .rusinga-home-grid { grid-template-columns:1fr; }
+ .rusinga-home-intro { grid-column:auto; grid-row:auto; padding:28px 22px; }
+ .rusinga-home-map { grid-column:auto; grid-row:auto; }
+ .rusinga-home-map img { min-height:300px; max-height:400px; }
+ .rusinga-home-photo-stack { grid-column:auto; grid-row:auto; grid-template-columns:1fr; grid-template-rows:220px 180px; min-height:auto; }
+ .rusinga-home-cards { grid-template-columns:1fr 1fr; gap:10px; padding:10px; }
+ .rusinga-home-card > img { height:140px; }
+ .rusinga-home-card p { font-size:13px; padding:0 8px; }
+ .rusinga-home-card h4 { font-size:15px; }
+}
+@media (max-width:420px) {
+ .rusinga-home-cards { grid-template-columns:1fr; }
+ .rusinga-home-card > img { height:190px; }
+}
+
 </style>
 </head>
 
@@ -810,142 +860,69 @@
 
 
 <main id="main-content">
-<div class="hero">
-
-    <div class="hero-overlay">
-
-        <div class="hero-content">
-
-            <h2>
-                Protecting Our Environment,<br>
-                Empowering Our Community
-            </h2>
-
-            <p>
-                Kamayoge Women Education Progressive Unit (KWEPU) CBO
-                is committed to environmental conservation, sustainable
-                livelihoods and community resilience.
-            </p>
-
-            <div class="hero-actions"><a class="button" href="projects.html">Explore Our Projects</a><a class="button secondary" href="volunteer.html">Volunteer With KWEPU</a></div>
-
-        </div>
-
+<section id="discover-rusinga" class="rusinga-home" aria-labelledby="rusinga-home-title">
+  <div class="rusinga-home-grid">
+    <div class="rusinga-home-intro">
+      <p class="home-eyebrow">Our Home</p>
+      <h2 id="rusinga-home-title">Rusinga Island</h2>
+      <h3>Home of KWEPU</h3>
+      <p>KWEPU works on Rusinga Island in Homa Bay County, western Kenya, within the Lake Victoria region. The island is home to vibrant communities whose livelihoods and wellbeing are closely connected to the lake and the local environment.</p>
+      <p>We work alongside women, young people, schools and communities to respond to local challenges through environmental restoration, food security, sustainable livelihoods and community empowerment.</p>
+      <a class="rusinga-home-cta" href="projects.html">Learn more about our work <span aria-hidden="true">→</span></a>
     </div>
 
-</div>
-
-
-<section id="about">
-
-    <h2>About KWEPU</h2>
-
-    <p class="section-intro">
-        KWEPU was established in 2019 in Rusinga, Homa Bay County, Kenya.
-        We work with communities and schools to protect the environment,
-        restore landscapes and promote sustainable livelihoods.
-    </p>
-
-</section>
-
-<section id="discover-rusinga" class="rusinga-section" aria-labelledby="rusinga-title">
-  <!-- Phase 4D stable Rusinga layout: no iframe, no absolute-positioned map -->
-  <div class="rusinga-wrap">
-    <div class="rusinga-heading">
-      <div class="eyebrow">Our Home</div>
-      <h2 id="rusinga-title">Discover Rusinga Island — Home of KWEPU</h2>
-      <p>Understanding Rusinga helps visitors understand why environmental protection, food security and resilient livelihoods are at the heart of KWEPU's work.</p>
+    <div class="rusinga-home-map">
+      <img src="rusinga-home-map-reference.jpg" alt="Illustrated location overview showing Kenya, Homa Bay County and Rusinga Island in Lake Victoria">
     </div>
 
-    <div class="rusinga-main-grid">
-      <div class="rusinga-map-card">
-        <div class="map-route" aria-label="Location journey from Kenya to Rusinga Island">
-          <div class="map-route-step"><span>KENYA</span>Country</div>
-          <div class="map-route-arrow" aria-hidden="true">→</div>
-          <div class="map-route-step"><span>HOMA BAY</span>County</div>
-          <div class="map-route-arrow" aria-hidden="true">→</div>
-          <div class="map-route-step"><span>RUSINGA</span>Island</div>
-        </div>
-
-        <svg class="rusinga-map-svg" viewBox="0 0 760 500" role="img" aria-labelledby="mapTitle mapDesc">
-          <title id="mapTitle">Illustrated map of Rusinga Island in Lake Victoria</title>
-          <desc id="mapDesc">A simplified non-navigation map showing Rusinga Island, Lake Victoria, the direction toward Mbita and representative community points.</desc>
-          <rect width="760" height="500" fill="#bfe8f5"/>
-          <text x="38" y="70" fill="#0a6ea8" font-size="30" font-family="Arial" font-weight="700">Lake Victoria</text>
-          <path d="M176 248 C205 162, 292 116, 390 121 C474 125, 540 158, 588 213 C625 255, 607 304, 557 332 C518 354, 497 399, 433 415 C363 433, 318 394, 259 404 C207 413, 159 382, 145 334 C134 297, 154 278, 176 248 Z" fill="#8fce7a" stroke="#ffffff" stroke-width="7"/>
-          <path d="M221 265 C256 198, 323 167, 397 170 C460 172, 511 195, 554 232 C568 259, 546 286, 512 305 C469 329, 457 365, 409 375 C355 386, 315 357, 271 366 C235 373, 202 351, 194 320 C188 296, 202 280, 221 265 Z" fill="#75bd69" opacity=".42"/>
-          <circle cx="278" cy="302" r="8" fill="#115e9b"/>
-          <text x="292" y="307" fill="#173b45" font-size="17" font-family="Arial" font-weight="700">Lakeshore communities</text>
-          <circle cx="506" cy="266" r="8" fill="#115e9b"/>
-          <text x="520" y="271" fill="#173b45" font-size="17" font-family="Arial" font-weight="700">Rusinga</text>
-          <line x1="575" y1="232" x2="700" y2="162" stroke="#0d6f83" stroke-width="4" stroke-dasharray="10 8"/>
-          <text x="604" y="137" fill="#174b58" font-size="16" font-family="Arial" font-weight="700">To Mbita / mainland</text>
-          <text x="370" y="245" text-anchor="middle" fill="#0c4738" font-size="34" font-family="Arial" font-weight="800">Rusinga Island</text>
-          <g transform="translate(650 392)"><path d="M0 52 L16 0 L32 52 L16 42 Z" fill="#123f48"/><text x="16" y="78" text-anchor="middle" fill="#123f48" font-size="18" font-family="Arial" font-weight="700">N</text></g>
-        </svg>
-        <p class="map-caption">Simplified location illustration for orientation — not a navigation map.</p>
-      </div>
-
-      <div class="rusinga-story-card">
-        <h3>An island community shaped by Lake Victoria</h3>
-        <p>KWEPU works on Rusinga Island in Homa Bay County, western Kenya. The island lies within Lake Victoria and its communities are closely connected to the lake, the land and local natural resources.</p>
-        <p>Fishing and farming are important local livelihoods. Rusinga's hills, lakeshore communities and cultivated areas form the living landscape in which KWEPU's programmes operate.</p>
-        <div class="rusinga-mini-grid">
-          <div class="rusinga-mini"><strong>Lake Victoria</strong><span>Water, food systems and livelihoods are closely connected to the lake.</span></div>
-          <div class="rusinga-mini"><strong>Fishing & Farming</strong><span>Local livelihoods make sustainable resource use especially important.</span></div>
-          <div class="rusinga-mini"><strong>Island Landscape</strong><span>Hills, settlements and cultivated land create opportunities for restoration.</span></div>
-          <div class="rusinga-mini"><strong>Community Connection</strong><span>Women, young people, schools and households are central to KWEPU's approach.</span></div>
-        </div>
-        <a class="button" href="projects.html">Learn more about our work →</a>
-      </div>
-    </div>
-
-    <div class="rusinga-photo-grid">
-      <figure class="rusinga-photo-card">
-        <img loading="lazy" decoding="async" src="rusinga-bridge-aerial.jpg" alt="Aerial view of the bridge connection between Rusinga Island and the Mbita mainland">
-        <figcaption><strong>Island connection:</strong> Rusinga is linked to the mainland at Mbita, connecting island communities with the wider Homa Bay region.</figcaption>
+    <div class="rusinga-home-photo-stack">
+      <figure class="rusinga-home-photo">
+        <img src="rusinga-lake-livelihoods.jpg" alt="A local fisher working on Lake Victoria">
+        <figcaption>Sustainable livelihoods on Lake Victoria</figcaption>
       </figure>
-      <figure class="rusinga-photo-card">
-        <img loading="lazy" decoding="async" src="rusinga-lake-livelihoods.jpg" alt="Fishing activity on Lake Victoria in the Rusinga Island region">
-        <figcaption><strong>Lake Victoria & livelihoods:</strong> The lake is closely connected to local livelihoods, food systems and everyday life around Rusinga.</figcaption>
-      </figure>
-      <figure class="rusinga-photo-card">
-        <img loading="lazy" decoding="async" src="rusinga-hills-community.jpg" alt="Rusinga Island landscape with hills, water and community transport">
-        <figcaption><strong>Landscape & community:</strong> Rusinga's hills, lakeshore and settlements form the environment in which KWEPU works with local communities.</figcaption>
-      </figure>
-      <figure class="rusinga-photo-card">
-        <img loading="lazy" decoding="async" src="kwepu-community-engagement.jpg" alt="KWEPU members and community participants gathered during a local engagement activity">
-        <figcaption><strong>KWEPU in the community:</strong> Community participation is central to KWEPU's approach to environmental action, livelihoods and local development.</figcaption>
+      <figure class="rusinga-home-photo">
+        <img src="rusinga-bridge-aerial.jpg" alt="Aerial view of the bridge connecting Rusinga Island to the mainland">
+        <figcaption>Rusinga Island bridge connection</figcaption>
       </figure>
     </div>
-
-    <div class="rusinga-heading kwepu-action-heading">
-      <div class="eyebrow">KWEPU in Action</div>
-      <h3>Local people caring for the environment</h3>
-      <p>Our work is rooted in practical participation. KWEPU members, young people and community participants help care for seedlings, learn together and turn environmental knowledge into action.</p>
-    </div>
-    <div class="rusinga-photo-grid kwepu-action-grid">
-      <figure class="rusinga-photo-card">
-        <img loading="lazy" decoding="async" src="kwepu-tree-nursery-watering.jpg" alt="KWEPU member watering seedlings in the tree nursery">
-        <figcaption><strong>Tree nursery care:</strong> KWEPU members care for young seedlings as part of the practical work behind MAKE RUSINGA GREEN.</figcaption>
-      </figure>
-      <figure class="rusinga-photo-card">
-        <img loading="lazy" decoding="async" src="kwepu-tree-nursery-youth.jpg" alt="Young people caring for seedlings in a KWEPU tree nursery">
-        <figcaption><strong>Youth participation:</strong> Young people gain practical experience in seedling care and environmental responsibility.</figcaption>
-      </figure>
-    </div>
-
-    <div class="rusinga-feature-grid" aria-label="Features of Rusinga Island and their relevance to KWEPU">
-      <article class="rusinga-feature"><div class="icon" aria-hidden="true">≈</div><strong>Lake Victoria</strong><p>The lake is central to local life, livelihoods and the wider environment.</p></article>
-      <article class="rusinga-feature"><div class="icon" aria-hidden="true">🐟</div><strong>Fishing & Farming</strong><p>Local livelihoods depend on healthy natural resources and resilient food systems.</p></article>
-      <article class="rusinga-feature"><div class="icon" aria-hidden="true">⛰</div><strong>Natural Environment</strong><p>Hills, lakeshore landscapes and cultivated areas create opportunities for restoration.</p></article>
-      <article class="rusinga-feature"><div class="icon" aria-hidden="true">●●●</div><strong>Vibrant Communities</strong><p>Women, young people, schools and households are at the heart of KWEPU's work.</p></article>
-      <article class="rusinga-feature"><div class="icon" aria-hidden="true">🌱</div><strong>Opportunities for Change</strong><p>Partnerships can strengthen environmental action, livelihoods and community resilience.</p></article>
-    </div>
-
-    <div class="rusinga-connection">A healthier environment. Stronger communities. A brighter future for Rusinga.</div>
   </div>
+
+  <div class="rusinga-home-cards" aria-label="Rusinga Island and KWEPU's community priorities">
+    <article class="rusinga-home-card">
+      <img src="rusinga-home-card-lake.jpg" alt="Lake Victoria at sunset">
+      <div class="rusinga-home-card-icon" aria-hidden="true">≈</div>
+      <h4>Lake Victoria</h4>
+      <p>Rusinga is surrounded by the waters of Lake Victoria, which sustain livelihoods, food systems and local culture.</p>
+    </article>
+    <article class="rusinga-home-card">
+      <img src="rusinga-home-card-fishing.jpg" alt="Fishing community members working together by the lake">
+      <div class="rusinga-home-card-icon blue" aria-hidden="true">🐟</div>
+      <h4>Fishing Communities</h4>
+      <p>Fishing is a vital livelihood for many households, supporting families and local markets.</p>
+    </article>
+    <article class="rusinga-home-card">
+      <img src="rusinga-home-card-nature.jpg" alt="Green hills and natural landscape of Rusinga Island">
+      <div class="rusinga-home-card-icon" aria-hidden="true">⛰</div>
+      <h4>Natural Environment</h4>
+      <p>Rusinga’s hills, wetlands and rich biodiversity provide opportunities for conservation, restoration and climate action.</p>
+    </article>
+    <article class="rusinga-home-card">
+      <img src="rusinga-home-card-community.jpg" alt="Community members travelling together on Lake Victoria">
+      <div class="rusinga-home-card-icon gold" aria-hidden="true">♧</div>
+      <h4>Vibrant Communities</h4>
+      <p>Strong, resilient communities, with a rich culture and traditions, are at the heart of KWEPU’s work.</p>
+    </article>
+    <article class="rusinga-home-card">
+      <img src="rusinga-home-card-change.jpg" alt="A community member beside a fishing boat on Lake Victoria">
+      <div class="rusinga-home-card-icon" aria-hidden="true">🌱</div>
+      <h4>Opportunities for Change</h4>
+      <p>By working together, we can support healthier environments, stronger livelihoods and brighter futures for Rusinga’s communities.</p>
+    </article>
+  </div>
+
+  <div class="rusinga-home-closing">A healthier environment. Stronger communities. A brighter future for Rusinga.</div>
 </section>
+
 
 <section id="vision-goals">
 
