@@ -804,6 +804,243 @@
  .rusinga-home-card > img { height:190px; }
 }
 
+
+/* HOMEPAGE REFINEMENT — proportions, map framing, header and card gallery */
+@media (min-width: 1101px) {
+  .main-header {
+    padding: 8px 3.5%;
+    gap: 22px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .header-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    flex: 0 1 42%;
+    min-width: 0;
+  }
+  .main-logo {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+  }
+  .brand-text h1 {
+    font-size: clamp(18px, 1.35vw, 23px);
+    line-height: 1.18;
+  }
+  .brand-text h1 br { display: none; }
+  .brand-text p {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  .main-nav {
+    flex: 1 1 auto;
+    gap: clamp(7px, .85vw, 14px);
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+  .main-nav a {
+    font-size: clamp(12px, .82vw, 14px);
+    white-space: nowrap;
+    padding: 8px 2px;
+  }
+}
+
+.rusinga-home-grid {
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.02fr) minmax(0, 1.02fr);
+  height: clamp(500px, 34vw, 580px);
+  min-height: 0;
+  align-items: stretch;
+}
+.rusinga-home-intro {
+  min-width: 0;
+  padding: clamp(22px, 2.4vw, 38px);
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rusinga-home-intro h2 {
+  font-size: clamp(35px, 3.2vw, 56px);
+  line-height: 1.03;
+}
+.rusinga-home-intro h3 {
+  font-size: clamp(25px, 2.4vw, 39px);
+  margin-bottom: 12px;
+}
+.rusinga-home-intro p:not(.home-eyebrow) {
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.42;
+  margin-bottom: 12px;
+}
+.rusinga-home-cta {
+  align-self: flex-start;
+  padding: 11px 18px;
+  margin-top: 2px;
+  font-size: 14px;
+}
+.rusinga-home-map {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background: #d8f1ff;
+}
+.rusinga-home-map img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  padding: 8px;
+}
+.rusinga-home-photo-stack {
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: 1.7fr 1fr;
+  gap: 5px;
+}
+.rusinga-home-photo {
+  min-height: 0;
+  height: 100%;
+}
+.rusinga-home-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.rusinga-home-photo:first-child img { object-position: center 38%; }
+.rusinga-home-photo figcaption {
+  font-size: clamp(12px, .9vw, 15px);
+  padding: 10px 13px;
+}
+.rusinga-home-cards {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  padding: 16px clamp(16px, 2vw, 30px) 22px;
+  align-items: stretch;
+}
+.rusinga-home-card {
+  border: 1px solid #e3ece8;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(17, 65, 48, .07);
+  padding-bottom: 18px;
+  min-width: 0;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.rusinga-home-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 24px rgba(17, 65, 48, .12);
+}
+.rusinga-home-card > img {
+  height: clamp(135px, 11vw, 180px);
+  object-fit: cover;
+}
+.rusinga-home-card-icon {
+  width: 54px;
+  height: 54px;
+  margin-top: -27px;
+}
+.rusinga-home-card h4 {
+  margin: 5px 10px 8px;
+  font-size: clamp(15px, 1.18vw, 19px);
+}
+.rusinga-home-card p {
+  padding: 0 13px;
+  font-size: clamp(13px, .95vw, 15px);
+  line-height: 1.48;
+}
+.rusinga-home-closing {
+  padding: 20px 16px;
+  font-size: clamp(20px, 1.8vw, 28px);
+}
+
+@media (max-width: 1100px) {
+  .rusinga-home-grid {
+    height: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .rusinga-home-intro {
+    min-height: 480px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .rusinga-home-map {
+    min-height: 480px;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .rusinga-home-map img {
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+  }
+  .rusinga-home-photo-stack {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 300px;
+    min-height: 0;
+    grid-template-columns: 1.35fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .rusinga-home-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .main-header { gap: 12px; }
+  .header-brand { flex-direction: column; align-items: center; }
+  .main-logo { width: 72px; height: 72px; }
+  .brand-text h1 { font-size: 19px; }
+  .brand-text h1 br { display: none; }
+  .rusinga-home-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .rusinga-home-intro {
+    min-height: 0;
+    padding: 28px 22px 30px;
+  }
+  .rusinga-home-intro h2 { font-size: clamp(36px, 9vw, 48px); }
+  .rusinga-home-intro h3 { font-size: 28px; }
+  .rusinga-home-intro p:not(.home-eyebrow) { font-size: 16px; }
+  .rusinga-home-map { min-height: 0; height: auto; }
+  .rusinga-home-map img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    min-height: 0;
+    padding: 8px;
+    object-fit: contain;
+  }
+  .rusinga-home-photo-stack {
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 260px 200px;
+  }
+  .rusinga-home-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+  .rusinga-home-card > img { height: 145px; }
+  .rusinga-home-card h4 { font-size: 15px; }
+  .rusinga-home-card p { font-size: 13px; padding: 0 9px; }
+}
+@media (max-width: 420px) {
+  .rusinga-home-cards { grid-template-columns: 1fr; }
+  .rusinga-home-card > img { height: 190px; }
+}
+
 </style>
 </head>
 
