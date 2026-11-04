@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kwepu.github.io/Kwepu-website/sitemap.xml
+Sitemap: https://kwepu.or.ke/sitemap.xml

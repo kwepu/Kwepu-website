@@ -8,19 +8,19 @@
     <title>KWEPU | Environmental Conservation in Rusinga, Kenya</title>
     <meta name="description" content="Kamayoge Women Education Progressive Unit (KWEPU) CBO is a community environmental organization in Rusinga, Homa Bay County, Kenya, advancing conservation, tree planting, sustainable livelihoods, women and youth empowerment, volunteering and climate action.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://kwepu.github.io/Kwepu-website/">
+    <link rel="canonical" href="https://kwepu.or.ke/">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="KWEPU | Environmental Conservation in Rusinga, Kenya">
     <meta property="og:description" content="Community-led environmental conservation, sustainable livelihoods and resilience in Rusinga, Homa Bay County, Kenya.">
-    <meta property="og:url" content="https://kwepu.github.io/Kwepu-website/">
-    <meta property="og:image" content="https://kwepu.github.io/Kwepu-website/kwepu-logo.png">
+    <meta property="og:url" content="https://kwepu.or.ke/">
+    <meta property="og:image" content="https://kwepu.or.ke/kwepu-logo.png">
     <meta property="og:site_name" content="KWEPU">
     <meta property="og:locale" content="en_KE">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="KWEPU | Environmental Conservation in Rusinga, Kenya">
     <meta name="twitter:description" content="Community-led environmental conservation, sustainable livelihoods and resilience in Rusinga, Homa Bay County, Kenya.">
-    <meta name="twitter:image" content="https://kwepu.github.io/Kwepu-website/kwepu-logo.png">
+    <meta name="twitter:image" content="https://kwepu.or.ke/kwepu-logo.png">
     <link rel="icon" href="kwepu-logo.png">
 
     <script type="application/ld+json">
@@ -29,8 +29,8 @@
       "@type": "NGO",
       "name": "Kamayoge Women Education Progressive Unit (KWEPU) CBO",
       "alternateName": "KWEPU",
-      "url": "https://kwepu.github.io/Kwepu-website/",
-      "logo": "https://kwepu.github.io/Kwepu-website/kwepu-logo.png",
+      "url": "https://kwepu.or.ke/",
+      "logo": "https://kwepu.or.ke/kwepu-logo.png",
       "description": "A community environmental organization advancing conservation, landscape restoration, sustainable livelihoods, women and youth empowerment, volunteering and climate action in Rusinga, Homa Bay County, Kenya.",
       "foundingDate": "2019",
       "areaServed": {"@type":"Place","name":"Rusinga, Homa Bay County, Kenya"},
@@ -42,7 +42,7 @@
         "addressCountry": "KE"
       },
       "telephone": ["+254724761771", "+254721200479"],
-      "email": ["ramanusojwang2002@gmail.com", "joseooko.o@gmail.com"],
+      "email": ["info@kwepu.or.ke", "partnerships@kwepu.or.ke", "volunteers@kwepu.or.ke"],
       "sameAs": ["https://www.facebook.com/profile.php?id=100076215381345"]
     }
     </script>
@@ -830,6 +830,42 @@
  .rusinga-home-cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:420px) { .rusinga-home-cards { grid-template-columns:1fr; } }
+
+/* KWEPU brand/header refinement and refreshed contact panel */
+.main-header { padding: 10px 4%; gap: 20px; }
+.header-brand { gap: 10px; }
+.main-logo { width: 54px; height: 54px; object-fit: contain; }
+.brand-text h1 { font-size: 23px; }
+.brand-text p { font-size: 14px; margin-top: 3px; }
+#contact {
+  max-width: none; width: 100%; margin: 0; padding: 70px 7%;
+  position: relative; color: #fff;
+  background: linear-gradient(90deg, rgba(5,35,23,.78), rgba(5,35,23,.45)),
+    url("rusinga-lake-livelihoods.jpg") center/cover no-repeat;
+}
+#contact h2, #contact .section-intro { color: #fff; }
+#contact .section-intro { max-width: 760px; }
+#contact .contact-details {
+  max-width: 1000px; margin: 30px auto 0; display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px;
+  background: transparent; padding: 0;
+}
+#contact .contact-group { background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.32);
+  border-radius: 16px; padding: 24px; backdrop-filter: blur(3px); }
+#contact .contact-group h3 { margin: 0 0 12px; color: #fff; font-size: 19px; }
+#contact a:not(.button) { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+#contact .contact-action { display: inline-flex; align-items: center; gap: 8px; margin: 7px 7px 0 0;
+  padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.65);
+  color: #fff; background: rgba(255,255,255,.12); text-decoration: none; font-weight: 700; }
+#contact .contact-action:hover { background: #fff; color: #155d31; }
+#contact .fb-icon { width: 19px; height: 19px; vertical-align: middle; fill: currentColor; }
+@media(max-width:760px) {
+  .main-logo { width: 45px; height: 45px; }
+  .brand-text h1 { font-size: 18px; }
+  #contact .contact-details { grid-template-columns: 1fr; }
+  #contact { padding: 48px 6%; background-position: center; }
+}
+
 </style>
 </head>
 
@@ -865,6 +901,7 @@
     <a href="#" class="active">Home</a>
 
     <a href="about.html">About Us</a>
+    <a href="statutes.html">Our Statutes</a>
       <a href="#vision-goals">Vision & Goals</a>
 
     <a href="projects.html">What We Do</a>
@@ -1497,42 +1534,36 @@
 
 
 
-   <section id="contact">
-
-    <h2>Contact Us</h2>
-
+   <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Get in Touch with KWEPU</h2>
     <p class="section-intro">
-        Get in touch with Kamayoge Women Education Progressive Unit (KWEPU) CBO.
-        We welcome partnerships, support and collaboration for environmental restoration.
+      Reach us directly for partnerships, volunteering, community programmes and support.
+      We welcome conversations that help build a greener and more resilient Rusinga.
     </p>
-
     <div class="contact-details">
-
-       <p><strong>Email:</strong><br>
-<a href="mailto:ramanusojwang2002@gmail.com">Ramanusojwang2002@gmail.com</a><br>
-<a href="mailto:joseooko.o@gmail.com">Joseooko.o@gmail.com</a>
-</p>
-
-<p><strong>Phone:</strong><br>
-<a href="tel:+254724761771">+254 724 761 771</a><br>
-<a href="tel:+254721200479">+254 721 200 479</a>
-</p>
-
-<p><strong>Postal Address:</strong><br>
-P.O. Box 134, Mbita
-</p>
-
-        <p>
-            <a class="button"
-               href="https://www.facebook.com/profile.php?id=100076215381345"
-               target="_blank"
-               rel="noopener noreferrer">
-               Visit Our Facebook Page
-            </a>
-        </p>
-
+      <div class="contact-group">
+        <h3>Email KWEPU</h3>
+        <p><a href="mailto:info@kwepu.or.ke">info@kwepu.or.ke</a><br>
+        <a href="mailto:partnerships@kwepu.or.ke">partnerships@kwepu.or.ke</a><br>
+        <a href="mailto:volunteers@kwepu.or.ke">volunteers@kwepu.or.ke</a></p>
+        <a class="contact-action" href="mailto:info@kwepu.or.ke">✉ Email us</a>
+      </div>
+      <div class="contact-group">
+        <h3>WhatsApp / Call</h3>
+        <p><a href="tel:+254724761771">+254 724 761 771</a><br>
+        <a href="tel:+254721200479">+254 721 200 479</a></p>
+        <a class="contact-action" href="https://wa.me/254724761771" target="_blank" rel="noopener noreferrer">WhatsApp Ramanus</a>
+        <a class="contact-action" href="https://wa.me/254721200479" target="_blank" rel="noopener noreferrer">WhatsApp Joseph</a>
+      </div>
+      <div class="contact-group">
+        <h3>Visit / Follow KWEPU</h3>
+        <p><strong>Postal Address</strong><br>KWEPU Rusinga<br>P.O. Box 134 – 40305, Mbita</p>
+        <a class="contact-action" href="https://www.facebook.com/profile.php?id=100076215381345" target="_blank" rel="noopener noreferrer" aria-label="Visit KWEPU on Facebook">
+          <svg class="fb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.3V13h2.8v8h3.4z"/></svg>
+          Facebook
+        </a>
+      </div>
     </div>
-
 </section>
 
 
