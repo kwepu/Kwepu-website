@@ -1499,38 +1499,45 @@
 
 
 
-<section id="donate">
-
-    <h2>Support KWEPU</h2>
-
-    <p class="section-intro">
-        Your support helps KWEPU expand tree planting,
-        environmental education, agroforestry and
-        community restoration projects.
-    </p>
-
-    <div class="donation-grid">
-
-        <div class="donation-card">
-            <h3>M-Pesa</h3>
-            <p>Donate via M-Pesa</p>
-            <div class="account-number">0724761771</div>
-        </div>
-
-        <div class="donation-card">
-            <h3>KCB Bank</h3>
-            <p>Account Number</p>
-            <div class="account-number">1273002660</div>
-        </div>
-
+<section id="donate" class="donation-callout" aria-labelledby="donate-title">
+  <div class="donation-callout-content">
+    <div class="donation-brand-icon">
+      <img src="donation-kwepu-logo.jpg" alt="KWEPU hands holding a seedling logo">
     </div>
-
-    <p class="donation-message">
-        Thank you for supporting our mission to build greener,
-        healthier and more resilient communities.
-    </p>
-
+    <div class="donation-copy">
+      <h2 id="donate-title">Would you like to support us?</h2>
+      <p>Even a small donation makes a big difference.</p>
+      <button type="button" class="donate-cta" id="openDonationDetails" aria-haspopup="dialog" aria-controls="donationDialog">
+        DONATE <span class="donate-cta-spark" aria-hidden="true">✦</span>
+      </button>
+    </div>
+  </div>
 </section>
+
+<div class="donation-dialog-backdrop" id="donationDialog" role="dialog" aria-modal="true" aria-labelledby="donation-dialog-title" hidden>
+  <div class="donation-dialog">
+    <button class="donation-dialog-close" type="button" id="closeDonationDetails" aria-label="Close donation details">×</button>
+    <h2 id="donation-dialog-title">Support KWEPU</h2>
+    <p>Your contribution supports women’s livelihoods, youth empowerment, tree planting and food security in Rusinga.</p>
+    <div class="donation-method">
+      <h3>M-Pesa via KCB Paybill</h3>
+      <p>Paybill: <strong>522522</strong></p>
+      <p>Account number: <strong>1273002660</strong></p>
+      <p class="donation-small-note">Please confirm the Paybill with KCB before making a payment.</p>
+      <button class="copy-donation" type="button" data-copy="522522">Copy Paybill</button>
+      <button class="copy-donation" type="button" data-copy="1273002660">Copy account number</button>
+    </div>
+    <div class="donation-method">
+      <h3>Direct bank transfer</h3>
+      <p><strong>KCB Bank Kenya</strong></p>
+      <p>Account name: <strong>Kamayoge Women Education Progressive Unit</strong></p>
+      <p>Account number: <strong>1273002660</strong></p>
+      <button class="copy-donation" type="button" data-copy="1273002660">Copy account number</button>
+    </div>
+    <p class="donation-thanks">Thank you for helping KWEPU grow a greener, stronger community.</p>
+    <p class="donation-small-note" id="donationCopyStatus" aria-live="polite"></p>
+  </div>
+</div>
 
 
 
@@ -1585,6 +1592,27 @@
 
 
 
+
+
+<script>
+(function(){
+ const dialog=document.getElementById('donationDialog');
+ const openBtn=document.getElementById('openDonationDetails');
+ const closeBtn=document.getElementById('closeDonationDetails');
+ if(!dialog||!openBtn||!closeBtn)return;
+ function openDialog(){dialog.hidden=false;document.body.style.overflow='hidden';closeBtn.focus();}
+ function closeDialog(){dialog.hidden=true;document.body.style.overflow='';openBtn.focus();}
+ openBtn.addEventListener('click',openDialog);
+ closeBtn.addEventListener('click',closeDialog);
+ dialog.addEventListener('click',e=>{if(e.target===dialog)closeDialog();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden)closeDialog();});
+ dialog.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+   const value=btn.getAttribute('data-copy');
+   try{await navigator.clipboard.writeText(value);document.getElementById('donationCopyStatus').textContent='Copied '+value+' to clipboard.';}
+   catch(err){document.getElementById('donationCopyStatus').textContent='Please copy this number manually: '+value;}
+ }));
+})();
+</script>
 
 </body>
 
