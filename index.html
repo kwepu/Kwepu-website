@@ -867,6 +867,64 @@
 }
 
 </style>
+
+
+
+
+<style>
+/* KWEPU donation banner: approved artwork + step-by-step donation modal */
+.kwepu-donate-cta{padding:24px 0;background:#f5faf5}
+.support-banner-wrap{position:relative;width:min(100%,1536px);margin:0 auto;line-height:0;overflow:hidden}
+.support-banner-image{display:block;width:100%;height:auto}
+.support-banner-donate-hotspot{position:absolute;left:33.3%;top:65.8%;width:35.2%;height:16.5%;border:0;border-radius:999px;background:transparent;color:transparent;cursor:pointer;line-height:1;overflow:hidden;text-indent:-9999px}
+.support-banner-donate-hotspot:focus-visible{outline:4px solid #fff;outline-offset:4px;box-shadow:0 0 0 8px #0b7d25}
+.donation-modal-backdrop{display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;padding:18px;background:rgba(5,24,13,.55);backdrop-filter:blur(3px);overflow-y:auto}
+.donation-modal-backdrop.is-open{display:flex;animation:donateFade .2s ease}
+.donation-modal-card{position:relative;width:min(760px,100%);max-height:calc(100vh - 36px);overflow:auto;padding:30px clamp(18px,3vw,32px);border-radius:24px;border:2px solid #7acb44;background:linear-gradient(145deg,#fff,#f0f9e9);box-shadow:0 24px 65px #0005,inset 0 1px 0 #fff;color:#173b22;animation:donatePop .25s ease}
+.donation-modal-card:before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(90deg,#147b36,#9be33d,#e6a62d,#147b36)}
+.donation-modal-close{position:absolute;right:14px;top:13px;width:40px;height:40px;border:0;border-radius:50%;background:#145e2d;color:#fff;font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 9px #0003}
+.donation-modal-header{padding-right:42px;text-align:center}
+.donation-modal-header h2{font-size:clamp(28px,4vw,38px);font-weight:850;color:#14612d;margin:5px 0 10px}
+.donation-modal-header p{font-size:16px;line-height:1.55;margin:0 auto;max-width:620px}
+.donation-instruction{margin-top:16px!important;font-weight:750;color:#226b35}
+.donation-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0 18px}
+.donation-choice{display:flex;flex-direction:column;align-items:center;gap:9px;min-height:210px;padding:22px 14px;border:1px solid #ffffff;border-radius:18px;cursor:pointer;color:#fff;box-shadow:0 8px 0 rgba(0,0,0,.12),0 14px 25px #0002,inset 0 1px 0 #ffffff80;transition:transform .18s,box-shadow .18s}
+.donation-choice:hover,.donation-choice:focus-visible{transform:translateY(-4px);box-shadow:0 11px 0 #0002,0 18px 28px #0003;outline:3px solid #8bdc42;outline-offset:2px}
+.mpesa-choice{background:linear-gradient(145deg,#159447,#06602e)}
+.bank-choice{background:linear-gradient(145deg,#f7b52b,#b76508)}
+.donation-choice-logo{display:flex;align-items:center;justify-content:center;width:66px;height:66px;border-radius:16px;background:#fff;color:#16813b;font-size:24px;font-weight:900;box-shadow:0 5px 12px #0002}
+.mpesa-logo{color:#159447;font-size:38px;font-weight:950;font-style:italic;border-bottom:5px solid #e8a528}
+.bank-logo{font-size:21px;color:#b76508;letter-spacing:-1px;border:3px solid #b76508}
+.donation-choice-name{font-size:25px;font-weight:900}
+.donation-choice-sub{font-size:14px;text-align:center}
+.donation-choice-arrow{margin-top:auto;font-weight:800;font-size:14px}
+.donation-method-details{margin:20px 0 10px;padding:18px;border-radius:18px;background:#fff;box-shadow:inset 0 1px 0 #fff,0 5px 16px #0001;border:1px solid #d8e9d2}
+.donation-back{border:0;background:#e7f4e1;color:#17612d;padding:9px 13px;border-radius:10px;font-weight:750;cursor:pointer;margin-bottom:15px}
+.method-detail-heading{display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:14px}
+.method-detail-heading h3{font-size:24px;color:#16612d;margin:0}
+.method-detail-heading .donation-choice-logo{width:52px;height:52px;font-size:20px;border-radius:12px}
+.donation-step-intro{text-align:center;font-weight:650}
+.donation-info-card{padding:14px 16px;border-radius:14px;box-shadow:0 5px 14px #0001}
+.mpesa-info{background:linear-gradient(135deg,#e9fbe9,#d0f1c4);border:1px solid #9bdb7a}
+.bank-info{background:linear-gradient(135deg,#fff7e2,#ffedc0);border:1px solid #edc36b}
+.donation-number-line{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #ffffffb0}
+.donation-number-line:last-child{border-bottom:0}
+.donation-number-line>span,.bank-info>div>span{font-weight:700;color:#3a6843}
+.donation-number-line strong{font-size:clamp(22px,3vw,30px);font-weight:950;letter-spacing:1px;color:#0d5c28}
+.bank-info>div{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #ffffffb0}
+.bank-info>div:last-child{border-bottom:0}
+.bank-info strong{font-size:16px;color:#174322}
+.copy-payment{border:0;border-radius:9px;padding:9px 13px;background:linear-gradient(145deg,#167b35,#06451d);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 3px 0 #043719}
+.copy-payment:hover{filter:brightness(1.12)}
+.donation-small-note{text-align:center;font-size:13px;color:#426748}
+.donation-thanks{text-align:center;font-weight:750;color:#216333;margin:20px 0 5px}
+.copy-status{text-align:center;min-height:20px;color:#17632e;font-weight:750}
+@keyframes donatePop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes donateFade{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){.support-banner-donate-hotspot{left:33.3%;top:65.8%;width:35.2%;height:16.5%}.donation-choice-grid{grid-template-columns:1fr}.donation-choice{min-height:165px}.donation-number-line{grid-template-columns:1fr auto}.donation-number-line>span{grid-column:1/-1}.donation-number-line strong{grid-column:1}.donation-number-line .copy-payment{grid-column:2;grid-row:2}.bank-info>div{grid-template-columns:1fr;gap:4px}.donation-modal-card{padding:25px 14px}.donation-method-details{padding:12px}}
+@media(prefers-reduced-motion:reduce){.donation-modal-card,.donation-modal-backdrop.is-open{animation:none!important}}
+</style>
+
 </head>
 
 
@@ -912,7 +970,7 @@
       <a href="volunteer.html">Volunteer</a>
     <a href="#gallery">Gallery</a>
 
-    <a href="#donate">Donate</a>
+    <a href="#donate" data-open-donation>Donate</a>
 
     <a href="#contact">Contact</a>
 
@@ -1499,45 +1557,67 @@
 
 
 
-<section id="donate" class="donation-callout" aria-labelledby="donate-title">
-  <div class="donation-callout-content">
-    <div class="donation-brand-icon">
-      <img src="donation-kwepu-logo.jpg" alt="KWEPU hands holding a seedling logo">
-    </div>
-    <div class="donation-copy">
-      <h2 id="donate-title">Would you like to support us?</h2>
-      <p>Even a small donation makes a big difference.</p>
-      <button type="button" class="donate-cta" id="openDonationDetails" aria-haspopup="dialog" aria-controls="donationDialog">
-        DONATE <span class="donate-cta-spark" aria-hidden="true">✦</span>
-      </button>
-    </div>
+
+
+<section id="donate" class="kwepu-donate-cta" aria-label="Support KWEPU">
+  <div class="support-banner-wrap">
+    <img src="support-kwepu-banner.png" alt="Would you like to support us? Even a small donation makes a big difference. Donate to KWEPU." class="support-banner-image">
+    <button class="support-banner-donate-hotspot" type="button" data-open-donation aria-haspopup="dialog" aria-controls="donation-modal" aria-label="Donate to KWEPU">Donate</button>
   </div>
 </section>
 
-<div class="donation-dialog-backdrop" id="donationDialog" role="dialog" aria-modal="true" aria-labelledby="donation-dialog-title" hidden>
-  <div class="donation-dialog">
-    <button class="donation-dialog-close" type="button" id="closeDonationDetails" aria-label="Close donation details">×</button>
-    <h2 id="donation-dialog-title">Support KWEPU</h2>
-    <p>Your contribution supports women’s livelihoods, youth empowerment, tree planting and food security in Rusinga.</p>
-    <div class="donation-method">
-      <h3>M-Pesa via KCB Paybill</h3>
-      <p>Paybill: <strong>522522</strong></p>
-      <p>Account number: <strong>1273002660</strong></p>
-      <p class="donation-small-note">Please confirm the Paybill with KCB before making a payment.</p>
-      <button class="copy-donation" type="button" data-copy="522522">Copy Paybill</button>
-      <button class="copy-donation" type="button" data-copy="1273002660">Copy account number</button>
+<div class="donation-modal-backdrop" id="donation-modal" role="dialog" aria-modal="true" aria-labelledby="donation-modal-title" aria-hidden="true">
+  <div class="donation-modal-card" role="document">
+    <button class="donation-modal-close" type="button" data-close-donation aria-label="Close donation window">×</button>
+    <header class="donation-modal-header">
+      <h2 id="donation-modal-title">Support KWEPU</h2>
+      <p>Your donation helps KWEPU strengthen environmental conservation, women’s livelihoods, youth empowerment and food security in Rusinga Island.</p>
+      <p class="donation-instruction">Choose how you would like to donate:</p>
+    </header>
+
+    <div class="donation-choice-grid" id="donation-choices">
+      <button type="button" class="donation-choice mpesa-choice" data-show-method="mpesa">
+        <span class="donation-choice-logo mpesa-logo" aria-hidden="true">M</span>
+        <span class="donation-choice-name">M-Pesa</span>
+        <span class="donation-choice-sub">Donate using Paybill</span>
+        <span class="donation-choice-arrow">Choose M-Pesa →</span>
+      </button>
+      <button type="button" class="donation-choice bank-choice" data-show-method="bank">
+        <span class="donation-choice-logo bank-logo" aria-hidden="true">KCB</span>
+        <span class="donation-choice-name">Bank Transfer</span>
+        <span class="donation-choice-sub">Direct deposit to KCB Bank Kenya</span>
+        <span class="donation-choice-arrow">Choose Bank Transfer →</span>
+      </button>
     </div>
-    <div class="donation-method">
-      <h3>Direct bank transfer</h3>
-      <p><strong>KCB Bank Kenya</strong></p>
-      <p>Account name: <strong>Kamayoge Women Education Progressive Unit</strong></p>
-      <p>Account number: <strong>1273002660</strong></p>
-      <button class="copy-donation" type="button" data-copy="1273002660">Copy account number</button>
-    </div>
-    <p class="donation-thanks">Thank you for helping KWEPU grow a greener, stronger community.</p>
-    <p class="donation-small-note" id="donationCopyStatus" aria-live="polite"></p>
+
+    <section class="donation-method-details" id="donation-method-mpesa" hidden>
+      <button type="button" class="donation-back" data-back-choices>← Back to donation options</button>
+      <div class="method-detail-heading"><span class="donation-choice-logo mpesa-logo" aria-hidden="true">M</span><h3>Donate through M-Pesa</h3></div>
+      <p class="donation-step-intro">Use the KCB Bank Paybill details below in your M-Pesa menu:</p>
+      <div class="donation-info-card mpesa-info">
+        <div class="donation-number-line"><span>Paybill number</span><strong>522522</strong><button type="button" class="copy-payment" data-copy="522522">Copy</button></div>
+        <div class="donation-number-line"><span>Account number</span><strong>1273002660</strong><button type="button" class="copy-payment" data-copy="1273002660">Copy</button></div>
+      </div>
+      <p class="donation-small-note">Enter the KWEPU account number as the account/reference number when prompted.</p>
+    </section>
+
+    <section class="donation-method-details" id="donation-method-bank" hidden>
+      <button type="button" class="donation-back" data-back-choices>← Back to donation options</button>
+      <div class="method-detail-heading"><span class="donation-choice-logo bank-logo" aria-hidden="true">KCB</span><h3>Direct bank deposit</h3></div>
+      <div class="donation-info-card bank-info">
+        <div><span>Bank</span><strong>KCB Bank Kenya</strong></div>
+        <div><span>Account name</span><strong>Kamayoge Women Education Progressive Unit</strong></div>
+        <div class="donation-number-line"><span>Account number</span><strong>1273002660</strong><button type="button" class="copy-payment" data-copy="1273002660">Copy</button></div>
+      </div>
+    </section>
+    <p class="donation-thanks">Thank you for supporting KWEPU and our community in Rusinga.</p>
+    <div class="copy-status" role="status" aria-live="polite"></div>
   </div>
 </div>
+
+
+
+
 
 
 
@@ -1596,20 +1676,50 @@
 
 <script>
 (function(){
- const dialog=document.getElementById('donationDialog');
- const openBtn=document.getElementById('openDonationDetails');
- const closeBtn=document.getElementById('closeDonationDetails');
- if(!dialog||!openBtn||!closeBtn)return;
- function openDialog(){dialog.hidden=false;document.body.style.overflow='hidden';closeBtn.focus();}
- function closeDialog(){dialog.hidden=true;document.body.style.overflow='';openBtn.focus();}
- openBtn.addEventListener('click',openDialog);
- closeBtn.addEventListener('click',closeDialog);
- dialog.addEventListener('click',e=>{if(e.target===dialog)closeDialog();});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dialog.hidden)closeDialog();});
- dialog.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
-   const value=btn.getAttribute('data-copy');
-   try{await navigator.clipboard.writeText(value);document.getElementById('donationCopyStatus').textContent='Copied '+value+' to clipboard.';}
-   catch(err){document.getElementById('donationCopyStatus').textContent='Please copy this number manually: '+value;}
+ const modal=document.getElementById('donation-modal');
+ if(!modal) return;
+ const openers=document.querySelectorAll('[data-open-donation]');
+ const closers=modal.querySelectorAll('[data-close-donation]');
+ const status=modal.querySelector('.copy-status');
+ let lastFocused=null;
+ function openModal(event){if(event)event.preventDefault();lastFocused=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('[data-close-donation]').focus();}
+ function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lastFocused)lastFocused.focus();}
+ openers.forEach(btn=>btn.addEventListener('click',openModal));
+ closers.forEach(btn=>btn.addEventListener('click',closeModal));
+ modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});
+ modal.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+   const val=btn.getAttribute('data-copy');
+   try{await navigator.clipboard.writeText(val);status.textContent='Copied '+val+' to clipboard.';}
+   catch(err){const input=document.createElement('textarea');input.value=val;input.style.position='fixed';input.style.opacity='0';document.body.appendChild(input);input.select();try{document.execCommand('copy');status.textContent='Copied '+val+' to clipboard.';}catch(e){status.textContent='Please copy this number manually: '+val;}input.remove();}
+   btn.textContent='Copied ✓';setTimeout(()=>btn.textContent='Copy',1600);
+ }));
+})();
+</script>
+
+
+<script>
+(function(){
+ const modal=document.getElementById('donation-modal'); if(!modal)return;
+ const openers=document.querySelectorAll('[data-open-donation]');
+ const choices=document.getElementById('donation-choices');
+ const methodPanels={mpesa:document.getElementById('donation-method-mpesa'),bank:document.getElementById('donation-method-bank')};
+ let previousFocus=null;
+ function openModal(e){if(e)e.preventDefault();previousFocus=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('[data-close-donation]').focus();showChoices();}
+ function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
+ function showChoices(){choices.hidden=false;Object.values(methodPanels).forEach(p=>p.hidden=true);}
+ function showMethod(name){choices.hidden=true;Object.values(methodPanels).forEach(p=>p.hidden=true);methodPanels[name].hidden=false;}
+ openers.forEach(el=>el.addEventListener('click',openModal));
+ modal.querySelector('[data-close-donation]').addEventListener('click',closeModal);
+ modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+ modal.querySelectorAll('[data-show-method]').forEach(btn=>btn.addEventListener('click',()=>showMethod(btn.dataset.showMethod)));
+ modal.querySelectorAll('[data-back-choices]').forEach(btn=>btn.addEventListener('click',showChoices));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))closeModal();});
+ modal.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+   const val=btn.dataset.copy;const status=modal.querySelector('.copy-status');
+   try{await navigator.clipboard.writeText(val);status.textContent='Copied '+val+' to clipboard.';}
+   catch(err){const area=document.createElement('textarea');area.value=val;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');status.textContent='Copied '+val+' to clipboard.';}catch(e){status.textContent='Please copy manually: '+val;}area.remove();}
+   const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>btn.textContent=old,1400);
  }));
 })();
 </script>
