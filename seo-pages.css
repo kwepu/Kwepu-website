@@ -7,3 +7,6 @@
 .main-logo{width:52px;height:52px}
 .brand-text h1{font-size:21px}
 @media(max-width:760px){.main-logo{width:44px;height:44px}.brand-text h1{font-size:17px}}
+
+/* KWEPU site-wide typography */
+body{font-family:"Open Sans",sans-serif!important}h1,h2,h3,h4,h5,h6,.main-nav,.brand-text h1{font-family:"Montserrat",sans-serif!important}
