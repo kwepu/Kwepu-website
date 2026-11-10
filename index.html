@@ -1494,9 +1494,15 @@
       </button>
       <button type="button" class="donation-choice bank-choice" data-show-method="bank">
         <span class="donation-choice-logo bank-logo" aria-hidden="true">KCB</span>
-        <span class="donation-choice-name">Bank Transfer</span>
-        <span class="donation-choice-sub">Direct deposit to KCB Bank Kenya</span>
-        <span class="donation-choice-arrow">Choose Bank Transfer →</span>
+        <span class="donation-choice-name">Kenya Bank Transfer</span>
+        <span class="donation-choice-sub">Local KCB bank deposit</span>
+        <span class="donation-choice-arrow">Choose Kenya Bank Transfer →</span>
+      </button>
+      <button type="button" class="donation-choice bank-choice" data-show-method="international">
+        <span class="donation-choice-logo bank-logo" aria-hidden="true">INT</span>
+        <span class="donation-choice-name">International Bank Transfer</span>
+        <span class="donation-choice-sub">For supporters donating from outside Kenya</span>
+        <span class="donation-choice-arrow">Choose International Transfer →</span>
       </button>
     </div>
 
@@ -1513,12 +1519,27 @@
 
     <section class="donation-method-details" id="donation-method-bank" hidden>
       <button type="button" class="donation-back" data-back-choices>← Back to donation options</button>
-      <div class="method-detail-heading"><span class="donation-choice-logo bank-logo" aria-hidden="true">KCB</span><h3>Direct bank deposit</h3></div>
+      <div class="method-detail-heading"><span class="donation-choice-logo bank-logo" aria-hidden="true">KCB</span><h3>Kenya direct bank deposit</h3></div>
       <div class="donation-info-card bank-info">
         <div><span>Bank</span><strong>KCB Bank Kenya</strong></div>
         <div><span>Account name</span><strong>Kamayoge Women Education Progressive Unit</strong></div>
         <div class="donation-number-line"><span>Account number</span><strong>1273002660</strong><button type="button" class="copy-payment" data-copy="1273002660">Copy</button></div>
       </div>
+    </section>
+
+    <section class="donation-method-details" id="donation-method-international" hidden>
+      <button type="button" class="donation-back" data-back-choices>← Back to donation options</button>
+      <div class="method-detail-heading"><span class="donation-choice-logo bank-logo" aria-hidden="true">KCB</span><h3>International bank transfer</h3></div>
+      <p class="donation-step-intro">For donors sending funds from outside Kenya, use these KCB Bank Kenya details. Your bank may ask for additional intermediary-bank or transfer information; please confirm any such requirements with KCB before sending.</p>
+      <div class="donation-info-card bank-info">
+        <div><span>Bank</span><strong>KCB Bank Kenya</strong></div>
+        <div><span>Account name</span><strong>KAMAYOGE WOMEN EDUCATION PROGRESSIVE UNIT</strong></div>
+        <div class="donation-number-line"><span>Account number</span><strong>1272737098</strong><button type="button" class="copy-payment" data-copy="1272737098">Copy</button></div>
+        <div><span>Branch / location</span><strong>Homa Bay, Mbita, Suba North</strong></div>
+        <div class="donation-number-line"><span>SWIFT / BIC</span><strong>KCBLKENX</strong><button type="button" class="copy-payment" data-copy="KCBLKENX">Copy</button></div>
+        <div><span>Country</span><strong>Kenya</strong></div>
+      </div>
+      <p class="donation-small-note">SWIFT/BIC: KCBLKENX. No IBAN has been supplied. Please ask KCB to confirm whether any intermediary-bank details or other information are required for your country and currency before making the transfer.</p>
     </section>
     <p class="donation-thanks">Thank you for supporting KWEPU and our community in Rusinga.</p>
     <div class="copy-status" role="status" aria-live="polite"></div>
@@ -1613,7 +1634,7 @@
  const modal=document.getElementById('donation-modal'); if(!modal)return;
  const openers=document.querySelectorAll('[data-open-donation]');
  const choices=document.getElementById('donation-choices');
- const methodPanels={mpesa:document.getElementById('donation-method-mpesa'),bank:document.getElementById('donation-method-bank')};
+ const methodPanels={mpesa:document.getElementById('donation-method-mpesa'),bank:document.getElementById('donation-method-bank'),international:document.getElementById('donation-method-international')};
  let previousFocus=null;
  function openModal(e){if(e)e.preventDefault();previousFocus=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('[data-close-donation]').focus();showChoices();}
  function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
