@@ -18,7 +18,132 @@
 .project-actions a:last-child{background:#e3f1e6;color:#176b35;border:1px solid #176b35}
 </style><script>
 document.addEventListener("DOMContentLoaded",function(){const b=document.getElementById("treeTargetToggle"),d=document.getElementById("treeTargetDetails");if(b&&d){b.addEventListener("click",function(){const isHidden=d.hidden;d.hidden=!isHidden;b.setAttribute("aria-expanded",String(isHidden));b.textContent=isHidden?"Hide Annual Fundraising Target":"🌱 View Annual Fundraising Target";});}});
-</script></head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="main-header"><div class="header-brand"><img src="kwepu-logo.png" alt="KWEPU logo" class="main-logo"><div class="brand-text"><h1>Kamayoge Women Education Progressive<br>Unit (KWEPU) CBO</h1><p>Community-led change in Rusinga, Kenya</p></div></div><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="statutes.html">Our Statutes</a><a href="projects.html" class="active">Our Work</a><a href="team.html">Meet Our Team</a><a href="why-kwepu.html">Why KWEPU</a><a href="volunteer.html">Volunteer</a><a href="index.html#impact">Impact</a><a href="news.html">News</a><a href="index.html#contact">Contact</a></nav></header><main id="main-content"><section class="hero" style="background-image:url('175861096_270135771433194_7508932878777501049_n.jpg')"><div class="hero-inner"><div class="eyebrow">Environment · Schools · Youth</div><h2>MAKE RUSINGA GREEN</h2><p>Plant. Nurture. Protect. Inspire. KWEPU’s long-term environmental initiative combines tree nurseries, education, planting and responsibility for tree survival.</p></div></section><article class="content">
+</script><style id="kwepu-shared-identity">
+
+/* KWEPU shared green-and-orange identity */
+:root{
+ --kwepu-green:#126B43;--kwepu-deep:#084B32;--kwepu-orange:#F28C28;
+ --kwepu-soft:#DDEFE3;--kwepu-blue:#DCEAF2;--kwepu-warm:#F7E5D3;
+ --kwepu-ink:#18382b;
+}
+html{scroll-behavior:smooth}
+body,button,input,select,textarea{font-family:Helvetica,Arial,sans-serif!important}
+body{color:var(--kwepu-ink)}
+h1,h2,h3,h4,h5,h6{font-family:Helvetica,Arial,sans-serif!important;letter-spacing:-.025em}
+.main-nav,.nav{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.main-nav a,.nav a{
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:10px 14px!important;border:1px solid transparent!important;
+ border-radius:5px!important;text-decoration:none!important;
+ font-family:Helvetica,Arial,sans-serif!important;font-weight:300!important;
+ letter-spacing:.015em;transition:background-color .2s ease,color .2s ease,transform .2s ease;
+}
+.main-nav a:hover,.nav a:hover,.main-nav a:focus-visible,.nav a:focus-visible{
+ background:var(--kwepu-orange)!important;color:#fff!important;border-color:var(--kwepu-orange)!important;
+ transform:translateY(-1px)
+}
+.main-nav a.active,.nav a.active,.main-nav a[aria-current="page"],.nav a[aria-current="page"]{
+ background:var(--kwepu-orange)!important;color:#fff!important;border-color:var(--kwepu-orange)!important;
+ box-shadow:0 3px 10px rgba(125,68,13,.16)
+}
+button,.button,.btn,a.button,a.btn,input[type=submit]{
+ font-family:Helvetica,Arial,sans-serif!important;font-weight:400!important;
+ transition:background-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease
+}
+button:hover,.button:hover,.btn:hover,a.button:hover,a.btn:hover,input[type=submit]:hover{
+ filter:saturate(1.12);transform:translateY(-1px)
+}
+header,.site-header,.header{
+ background:linear-gradient(90deg,var(--kwepu-green) 0%,var(--kwepu-green) 75%,var(--kwepu-orange) 75%,var(--kwepu-orange) 100%)!important;
+ color:#fff
+}
+header a,.site-header a,.header a{color:inherit}
+section:nth-of-type(odd){--section-tint:var(--kwepu-soft)}
+section:nth-of-type(even){--section-tint:var(--kwepu-blue)}
+.card,.project-card,.team-card,.content-card,.stat-card{
+ border-radius:12px;box-shadow:0 8px 24px rgba(13,75,49,.08)
+}
+a:focus-visible,button:focus-visible{outline:3px solid var(--kwepu-orange);outline-offset:3px}
+@media(max-width:760px){
+ .main-nav,.nav{gap:5px}
+ .main-nav a,.nav a{padding:8px 10px!important;font-size:.92rem}
+ header,.site-header,.header{background:linear-gradient(180deg,var(--kwepu-green) 0%,var(--kwepu-green) 75%,var(--kwepu-orange) 75%,var(--kwepu-orange) 100%)!important}
+}
+
+</style>
+<style>
+
+/* KWEPU approved site-wide contrast, typography and navigation refinement */
+:root{
+  --kwepu-green:#126b43;
+  --kwepu-deep:#084b32;
+  --kwepu-orange:#f28c28;
+  --kwepu-ink:#18352b;
+  --kwepu-soft:#eef7f1;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:Helvetica,Arial,sans-serif!important;
+  color:var(--kwepu-ink)!important;
+}
+h1,h2,h3,h4,h5,h6,.main-nav,.brand-text h1{
+  font-family:Helvetica,Arial,sans-serif!important;
+}
+.main-header{
+  background:linear-gradient(90deg,#126b43 0%,#126b43 75%,#f28c28 75%,#f28c28 100%)!important;
+}
+.brand-text h1{color:#fff!important;font-weight:500!important}
+.brand-text p{color:#fff!important;font-weight:300!important}
+.main-nav a{
+  font-family:Helvetica,Arial,sans-serif!important;
+  font-weight:400!important;
+  border:1px solid rgba(255,255,255,.42)!important;
+  border-radius:9px!important;
+  padding:9px 14px!important;
+  color:#124a32!important;
+  background:#fff!important;
+  text-decoration:none!important;
+  transition:background-color .18s ease,color .18s ease,transform .18s ease!important;
+}
+.main-nav a:hover,.main-nav a.active,.main-nav a[aria-current="page"]{
+  background:var(--kwepu-orange)!important;
+  color:#fff!important;
+  border-color:#fff!important;
+  box-shadow:0 4px 12px rgba(0,0,0,.13)!important;
+  border-bottom-color:#fff!important;
+}
+.page-hero{
+  background:linear-gradient(120deg,#e4f2e9 0%,#f8fbf8 68%,#e2f2f4 100%)!important;
+}
+.page-hero .eyebrow{color:#17643f!important}
+.page-hero h2,.content h2,.section h2,.section-title{
+  color:#105c3a!important;
+}
+.page-hero p,.content p,.section p,.content li,.section li{
+  color:#203a30;
+}
+.card,.content .card,.photo-grid figure{
+  background:#fff!important;
+}
+.card h3,.content .card h3{color:#126b43!important}
+.footer,.callout,.cta{
+  background:#084b32!important;
+  color:#fff!important;
+}
+.footer h2,.footer h3,.footer p,.footer a,
+.callout h2,.callout p,.callout a,
+.cta h2,.cta p,.cta a{color:#fff!important}
+button,.button,.btn,.cta-button{
+  font-family:Helvetica,Arial,sans-serif!important;
+}
+@media(max-width:760px){
+ .main-header{background:linear-gradient(110deg,#126b43 0%,#126b43 75%,#f28c28 75%,#f28c28 100%)!important}
+ .main-nav a{font-size:14px!important}
+}
+
+</style>
+<link rel="stylesheet" href="kwepu-final.css">
+</head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="main-header"><div class="header-brand"><img src="kwepu-logo.png" alt="KWEPU logo" class="main-logo"><div class="brand-text"><h1>Kamayoge Women Education Progressive<br>Unit (KWEPU) CBO</h1><p>Community-led change in Rusinga, Kenya</p></div></div><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="statutes.html">Our Statutes</a><a href="projects.html" class="active">Our Work</a><a href="team.html">Meet Our Team</a><a href="why-kwepu.html">Why KWEPU</a><a href="volunteer.html">Volunteer</a><a href="index.html#impact">Impact</a><a href="news.html">News</a><a href="index.html#contact">Contact</a></nav></header><main id="main-content"><section class="hero" style="background-image:url('175861096_270135771433194_7508932878777501049_n.jpg')"><div class="hero-inner"><div class="eyebrow">Environment · Schools · Youth</div><h2>MAKE RUSINGA GREEN</h2><p>Plant. Nurture. Protect. Inspire. KWEPU’s long-term environmental initiative combines tree nurseries, education, planting and responsibility for tree survival.</p></div></section><article class="content">
 <p class="lead">The <strong>KWEPU Tree Nursery & Tree Planting Initiative</strong> was born from a simple but ambitious vision: <strong>to make Rusinga green</strong>.</p>
 <div class="grid"><div class="card"><h3>Tree nursery</h3><p>Young people and community members learn about tree types, seedlings, soil preparation and care before planting.</p></div><div class="card"><h3>Schools & young people</h3><p>KWEPU engages children in practical planting so environmental responsibility can grow with the next generation.</p></div><div class="card"><h3>Community stewardship</h3><p>The same approach extends into communities: plant a tree, care for it and protect it as it grows.</p></div></div>
 <section class="section"><h2>From nursery to long-term care</h2><p>Once seedlings are ready, KWEPU takes them into schools and communities for planting. Children and community participants are reminded that planting is only the beginning: young trees need continued care if they are to survive and mature.</p><div class="cycle"><span>Nursery</span><span>→ Environmental education</span><span>→ Planting</span><span>→ Tree care</span><span>→ Greener communities</span></div><p class="quote">Success is not simply how many seedlings are planted, but how many trees survive, mature and benefit future generations.</p></section>
